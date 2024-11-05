@@ -1,9 +1,7 @@
-function Empty() {
+export default function Empty() {
   return (
     <>
-      <div className="h-dvh"></div>
+      <div className=""></div>
     </>
   );
 }
-
-export default Empty;

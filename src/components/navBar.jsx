@@ -19,7 +19,7 @@ function Navbar() {
         </div>
 
         {/* Navigation: */}
-        <div className="flex items-center justify-between gap-3 text-base font-semibold lowercase sm:w-1/2 md:justify-end md:gap-6 xl:gap-9">
+        <div className="flex items-center justify-between gap-3 text-base font-semibold capitalize sm:w-1/2 md:justify-end md:gap-6 xl:gap-9">
           <a
             className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
             href="#"
