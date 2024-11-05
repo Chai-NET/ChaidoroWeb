@@ -9,7 +9,7 @@ function Navbar() {
           <h1 className="font-Outfit font-semibold tracking-tighter">
             Chaidoro
           </h1>
-          <p className="text-xs tracking-wide">v0.1.0</p>
+          {/* <p className="text-xs tracking-wide">v0.1.0</p> */}
           <p className="-mr-96 line-clamp-1 text-nowrap px-1 text-xs tracking-widest text-coffee underline-offset-4 opacity-0 blur-sm transition-all duration-1000 ease-in-out hover:text-blax hover:underline group-hover:mr-0 group-hover:tracking-normal group-hover:text-chocolate group-hover:opacity-100 group-hover:blur-0">
             Open source / local pomodoro client.
           </p>
@@ -24,19 +24,31 @@ function Navbar() {
             className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
             href="#"
           >
-            laikmatis
+            timer
           </a>
           <a
             className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
             href="#"
           >
-            užduotis
+            tasks
           </a>
           <a
             className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
             href="#"
           >
-            žurnalas
+            journal
+          </a>
+          <a
+            className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
+            href="#"
+          >
+            chat
+          </a>
+          <a
+            className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
+            href="#"
+          >
+            settings
           </a>
         </div>
       </div>
