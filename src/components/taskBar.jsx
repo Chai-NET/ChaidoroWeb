@@ -51,7 +51,7 @@ export default function TaskBar() {
     setIsPanelOpen(!isPanelOpen);
   }
 
-  // Task Panel Close (for Escape key usage given below.):
+  // Task Panel Close (for Escape key usage given below):
   function closeTaskPanel() {
     setIsPanelOpen(false);
     console.log("Close Panel Triggered");
@@ -59,49 +59,50 @@ export default function TaskBar() {
   // Esc to close the taskPanel
   useEscape(closeTaskPanel);
 
-  // Render:
   return (
     <>
-      <div className="border-chocolate py-3 text-chocolate">
-        <h2 className="text-accen font-Outfit text-xl font-semibold capitalize">
-          to-do list
-        </h2>
-        <ul className="text-start">
-          {todos.map((todo, index) => (
-            <li
-              className="flex items-center transition-all duration-500"
-              key={index}
-            >
-              <button
-                className="peer pr-3 font-poppins text-3xl font-thin"
-                onClick={() => handleRemoveTodo(index)}
+      <div className="">
+        <div className="border-chocolate py-3 text-chocolate">
+          <h2 className="text-accen font-Outfit text-xl font-semibold capitalize">
+            to-do list
+          </h2>
+          <ul className="text-start">
+            {todos.map((todo, index) => (
+              <li
+                className="flex items-center transition-all duration-500"
+                key={index}
               >
-                o
-              </button>
-              <div className="line-clamp-1 font-Outfit transition-all duration-300 hover:line-clamp-3 hover:font-semibold hover:tracking-wide hover:text-coffee group-hover:text-red-600 peer-hover:text-red-600">
-                {todo}
-              </div>
-            </li>
-          ))}
-        </ul>
-      </div>
+                <button
+                  className="peer pr-3 font-poppins text-3xl font-thin"
+                  onClick={() => handleRemoveTodo(index)}
+                >
+                  o
+                </button>
+                <div className="line-clamp-1 font-Outfit transition-all duration-300 hover:line-clamp-3 hover:font-semibold hover:tracking-wide hover:text-coffee group-hover:text-red-600 peer-hover:text-red-600">
+                  {todo}
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-      {/* Task Input Field */}
-      <div class="w-full">
-        <div className="border-t border-chocolate bg-cream">
-          <div className="flex flex-row justify-between">
-            <div className="flex-grow">
-              <input
-                onKeyDown={handleKeyPress}
-                type="text"
-                maxLength={90}
-                value={task}
-                onChange={(e) => setTask(e.target.value)}
-                id="todos"
-                placeholder="Here add your task ฅ^•ﻌ•^ฅ"
-                autocomplete="off"
-                className="peer w-full appearance-none bg-transparent py-1 font-Outfit -tracking-tighter text-chocolate outline-none placeholder:text-coffee/95 placeholder:opacity-40 focus:ring-0"
-              />
+        {/* Task Input Field */}
+        <div class="w-full">
+          <div className="border-t border-coffee bg-cream">
+            <div className="flex flex-row justify-between">
+              <div className="flex-grow">
+                <input
+                  onKeyDown={handleKeyPress}
+                  type="text"
+                  maxLength={90}
+                  value={task}
+                  onChange={(e) => setTask(e.target.value)}
+                  id="todos"
+                  placeholder="Here add your task ฅ^•ﻌ•^ฅ"
+                  autocomplete="off"
+                  className="peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit -tracking-tighter text-chocolate outline-none placeholder:text-coffee placeholder:opacity-90 focus:ring-0"
+                />
+              </div>
             </div>
           </div>
         </div>

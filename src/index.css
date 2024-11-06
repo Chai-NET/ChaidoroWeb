@@ -16,3 +16,25 @@
   background-color: #343c79; /* Thumb color */
   border-radius: 0px;
 }
+
+/* Colors: */
+
+@layer base {
+  :root {
+    --color-primary: #503a3a;
+    --color-secondary: #a98282;
+    --color-bg-primary: #e5d4d4;
+  }
+}
+
+.theme-black {
+  --color-primary: #9acfe7;
+  --color-secondary: #e0e0e0;
+  --color-bg-primary: #0a0404;
+}
+
+.theme-white {
+  --color-primary: #252525;
+  --color-secondary: #b6b6b6;
+  --color-bg-primary: #e0e0e0;
+}

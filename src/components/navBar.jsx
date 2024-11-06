@@ -1,11 +1,20 @@
+import { CiSettings, CiAlarmOn, CiBoxList, CiStickyNote } from "react-icons/ci";
+import {
+  IoSettings,
+  IoAlarm,
+  IoApps,
+  IoLanguage,
+  IoBarChart,
+} from "react-icons/io5";
+
 function Navbar() {
   return (
     <>
-      <div className="relative flex justify-between border-b border-chocolate font-Outfit text-lg text-chocolate">
+      <div className="relative flex justify-between border-b border-chocolate font-Outfit text-xl text-chocolate">
         <div className="group flex w-1/2 items-center gap-1 pr-2 transition-all duration-300 hover:gap-2">
-          <div className="block aspect-square size-3 rounded-full bg-coffee"></div>
-          <div className="block aspect-square size-3 rounded-full bg-chocolate"></div>
-          <div className="block aspect-square size-3 rounded-full bg-blax"></div>
+          <div className="block aspect-square size-4 rounded-full bg-coffee"></div>
+          <div className="block aspect-square size-4 rounded-full bg-chocolate"></div>
+          <div className="block aspect-square size-4 rounded-full bg-blax"></div>
           <h1 className="font-Outfit font-semibold tracking-tighter">
             Chaidoro
           </h1>
@@ -19,36 +28,18 @@ function Navbar() {
         </div>
 
         {/* Navigation: */}
-        <div className="flex items-center justify-between gap-3 text-base font-semibold capitalize sm:w-1/2 md:justify-end md:gap-6 xl:gap-9">
+        <div className="flex items-center justify-end gap-3 text-base font-semibold capitalize sm:w-1/2">
           <a
             className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
             href="#"
           >
-            timer
+            <IoAlarm className="size-5 text-chocolate transition-all duration-500 hover:rotate-45" />
           </a>
           <a
-            className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
+            className="transition-all duration-300 hover:text-blax hover:underline"
             href="#"
           >
-            tasks
-          </a>
-          <a
-            className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
-            href="#"
-          >
-            journal
-          </a>
-          <a
-            className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
-            href="#"
-          >
-            chat
-          </a>
-          <a
-            className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
-            href="#"
-          >
-            settings
+            <IoSettings className="size-5 text-chocolate transition-all duration-500 hover:rotate-45" />
           </a>
         </div>
       </div>
