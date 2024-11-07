@@ -17,7 +17,7 @@ function Clock() {
   }, []);
   return (
     <>
-      <div className="mt-3 flex items-center justify-center">
+      <div className="flex items-center justify-center">
         <div className="w-full bg-chocolate py-32 text-center font-AlbertSans text-cream">
           <p className="font-RobotoCondensed text-xs font-light proportional-nums tracking-widest">
             {timeStein}.01 | {year} © ChaiNET

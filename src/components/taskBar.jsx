@@ -62,7 +62,7 @@ export default function TaskBar() {
   return (
     <>
       <div className="">
-        <div className="border-chocolate py-3 text-chocolate">
+        <div className="border-chocolate py-6 text-chocolate">
           <h2 className="text-accen font-Outfit text-xl font-semibold capitalize">
             to-do list
           </h2>
