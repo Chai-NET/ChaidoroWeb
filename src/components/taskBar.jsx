@@ -2,6 +2,8 @@ import useEscape from "../services/useEscape.jsx";
 // import taskPanelButtonIMG from "../img/taskPanelButton.png";
 import { useState, useEffect } from "react";
 import { Reorder } from "framer-motion";
+import { GiTeapot, GiCoffeeCup } from "react-icons/gi";
+import { TbSteam } from "react-icons/tb";
 
 export default function TaskBar() {
   const [task, setTask] = useState();
@@ -40,6 +42,11 @@ export default function TaskBar() {
     const newTodos = todos.filter((_, i) => i !== index);
     setTodos(newTodos);
   };
+  const today = new Date();
+  const month = today.getMonth();
+  const year = today.getFullYear();
+  const date = today.getDate();
+  const currentDate = month + "/" + date + "/" + year;
 
   return (
     <>
@@ -51,34 +58,55 @@ export default function TaskBar() {
           </div>
 
           <ul className="text-start font-poppins">
-            <Reorder.Group values={todos} onReorder={setTodos}>
-              {todos.map((todo, index) => (
-                <Reorder.Item value={todo} key={todo}>
-                  <li key={index}>
-                    <div className="flex flex-row items-center gap-3 hover:cursor-grab active:cursor-grabbing">
-                      <div className="flex flex-row items-center">
-                        <button
-                          className="peer mb-1 pr-1 font-poppins text-3xl font-thin"
-                          onClick={() => handleRemoveTodo(index)}
-                        >
-                          o
-                        </button>
-                        {/* Task Name */}
-                        <div className="line-clamp-1 whitespace-nowrap font-Outfit transition-all duration-500 hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-coffee active:cursor-grabbing group-hover:text-red-600 peer-hover:text-red-600">
-                          {todo}
+            {/* Empty List Message: */}
+            {todos.length === 0 ? (
+              <div className="relative flex select-none flex-col items-center justify-center gap-3 py-12 text-center font-Outfit">
+                <h1 className="text-xl font-black text-chocolate/45 md:text-2xl">
+                  List is empty !
+                </h1>
+                <p className="tracking-tight text-coffee/75">
+                  Your to do list is empty but it is fine as long as cup is not.{" "}
+                  <br />
+                  {currentDate}.01 | © ChaiNET <br />
+                </p>
+                <div className="flex select-none items-center text-5xl font-black tracking-wide text-coffee/15 md:text-7xl">
+                  <GiTeapot />
+                  <TbSteam size={35} className="text-chocolate/30" />
+                  <div className="scale-x-[-1]">
+                    <GiTeapot />
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Reorder.Group values={todos} onReorder={setTodos}>
+                {todos.map((todo, index) => (
+                  <Reorder.Item value={todo} key={todo}>
+                    <li key={index}>
+                      <div className="flex flex-row items-center gap-3 hover:cursor-grab active:cursor-grabbing">
+                        <div className="flex flex-row items-center">
+                          <button
+                            className="peer mb-1 pr-1 font-poppins text-3xl font-thin"
+                            onClick={() => handleRemoveTodo(index)}
+                          >
+                            o
+                          </button>
+                          {/* Task Name */}
+                          <div className="line-clamp-1 whitespace-nowrap font-Outfit transition-all duration-500 hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-coffee active:cursor-grabbing group-hover:text-red-600 peer-hover:text-red-600">
+                            {todo}
+                          </div>
+                        </div>
+                        {/* Line betweeen */}
+                        <hr className="w-full border-coffee" />
+                        {/* Index on the list */}
+                        <div className="item-end flex justify-end peer-has-[:checked]:hidden">
+                          {index + 1}
                         </div>
                       </div>
-                      {/* Line betweeen */}
-                      <hr className="w-full border-coffee" />
-                      {/* Index on the list */}
-                      <div className="item-end flex justify-end peer-has-[:checked]:hidden">
-                        {index + 1}
-                      </div>
-                    </div>
-                  </li>
-                </Reorder.Item>
-              ))}
-            </Reorder.Group>
+                    </li>
+                  </Reorder.Item>
+                ))}
+              </Reorder.Group>
+            )}
           </ul>
 
           {/* Task Input Field */}

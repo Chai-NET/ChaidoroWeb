@@ -1,4 +1,6 @@
 import React from "react";
+import { GiTeapot } from "react-icons/gi";
+
 import "./App.css";
 import {
   IoSettings,
@@ -106,12 +108,20 @@ function Navbar() {
     <div className="relative flex justify-between border-b border-chocolate font-Outfit text-xl text-chocolate">
       <a
         href="/"
-        className="group flex w-1/2 cursor-pointer items-center gap-1 pr-2 transition-all duration-300 hover:gap-2"
+        className="group flex w-1/2 cursor-pointer items-center gap-0 pr-2 transition-all duration-300 hover:gap-1"
       >
-        <div className="block aspect-square size-4 rounded-full bg-coffee"></div>
-        <div className="block aspect-square size-4 rounded-full bg-chocolate"></div>
-        <div className="block aspect-square size-4 rounded-full bg-blax"></div>
-        <h1 className="font-Outfit font-semibold tracking-tighter">Chaidoro</h1>
+        <div className="block aspect-square size-5 rounded-full text-coffee transition-all delay-100 duration-300 group-hover:rotate-12">
+          <GiTeapot />
+        </div>
+        <div className="block aspect-square size-5 rounded-full text-chocolate transition-all delay-200 duration-300 group-hover:rotate-12">
+          <GiTeapot />
+        </div>
+        <div className="block aspect-square size-5 rounded-full text-blax transition-all delay-300 duration-300 group-hover:rotate-12">
+          <GiTeapot />
+        </div>
+        <h1 className="pl-1 font-Outfit font-semibold tracking-tighter">
+          Chaidoro
+        </h1>
         <p className="-mr-96 line-clamp-1 text-nowrap px-1 text-xs tracking-widest text-coffee underline-offset-4 opacity-0 blur-sm transition-all duration-1000 ease-in-out hover:text-blax hover:underline group-hover:mr-0 group-hover:tracking-normal group-hover:text-chocolate group-hover:opacity-100 group-hover:blur-0">
           v0.01 / Beta
         </p>
