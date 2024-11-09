@@ -119,7 +119,6 @@ export default function TaskBar() {
               <div className="flex flex-row justify-between">
                 <div className="flex flex-grow items-center gap-x-1 text-coffee">
                   <TbSteam />
-
                   <input
                     onKeyDown={handleKeyPress}
                     type="text"
