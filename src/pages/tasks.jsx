@@ -3,6 +3,7 @@ import { FaSortAmountDown } from "react-icons/fa";
 
 import { Reorder } from "framer-motion";
 import { useState, useEffect } from "react";
+import { TbSteam } from "react-icons/tb";
 
 function Tasks() {
   const [task, setTask] = useState();
@@ -84,7 +85,9 @@ function Tasks() {
         <div className="my-3 w-full">
           <div className="border-t border-coffee bg-cream">
             <div className="flex flex-row justify-between">
-              <div className="flex-grow">
+              <div className="flex flex-grow items-center gap-x-1 text-coffee">
+                <TbSteam />
+
                 <input
                   onKeyDown={handleKeyPress}
                   type="text"
@@ -92,9 +95,9 @@ function Tasks() {
                   value={task}
                   onChange={(e) => setTask(e.target.value)}
                   id="todos"
-                  placeholder="Here add your task ฅ^•ﻌ•^ฅ"
+                  placeholder="Type here add your task"
                   autoComplete="off"
-                  className="peer w-full appearance-none border-opacity-90 bg-transparent font-Outfit -tracking-tighter text-chocolate outline-none placeholder:text-coffee placeholder:opacity-90 focus:ring-0"
+                  className="peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest text-chocolate outline-none placeholder:tracking-tight placeholder:text-coffee placeholder:opacity-90 focus:ring-0"
                 />
               </div>
             </div>

@@ -51,17 +51,21 @@ export default function TaskBar() {
   return (
     <>
       <div className="h-full overflow-y-scroll pb-9">
-        <div className="border-chocolate py-3 font-Outfit text-blax">
-          <div className="my-1 flex gap-1 font-bold text-blax">
-            <h2 className="text-3xl font-semibold capitalize">to-do list</h2>
-            <h2 className="text-sm font-semibold">{todos.length}</h2>
+        <div className="border-chocolate py-3 font-Outfit">
+          <div className="my-1 flex gap-1 font-bold">
+            <h2 className="text-3xl font-semibold capitalize text-chocolate">
+              to-do list
+            </h2>
+            <h2 className="text-sm font-semibold text-coffee">
+              {todos.length}
+            </h2>
           </div>
 
           <ul className="text-start font-poppins">
             {/* Empty List Message: */}
             {todos.length === 0 ? (
               <div className="relative flex select-none flex-col items-center justify-center gap-3 py-12 text-center font-Outfit">
-                <h1 className="text-xl font-black text-chocolate/45 md:text-2xl">
+                <h1 className="text-xl font-light text-chocolate/45 md:text-2xl">
                   List is empty !
                 </h1>
                 <p className="tracking-tight text-coffee/75">
@@ -113,7 +117,9 @@ export default function TaskBar() {
           <div className="w-full">
             <div className="border-t border-coffee bg-cream">
               <div className="flex flex-row justify-between">
-                <div className="flex-grow">
+                <div className="flex flex-grow items-center gap-x-1 text-coffee">
+                  <TbSteam />
+
                   <input
                     onKeyDown={handleKeyPress}
                     type="text"
@@ -121,7 +127,7 @@ export default function TaskBar() {
                     value={task}
                     onChange={(e) => setTask(e.target.value)}
                     id="todos"
-                    placeholder="Here add your task ฅ^•ﻌ•^ฅ"
+                    placeholder="Type here add your task"
                     autoComplete="off"
                     className="peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest text-chocolate outline-none placeholder:tracking-tight placeholder:text-coffee placeholder:opacity-90 focus:ring-0"
                   />

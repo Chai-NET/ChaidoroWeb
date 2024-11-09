@@ -23,7 +23,6 @@ function Clock() {
       <div className="flex items-center justify-center">
         <div className="w-full bg-chocolate py-32 text-center font-AlbertSans text-cream">
           <p className="font-RobotoCondensed text-xs font-light proportional-nums tracking-widest">
-            {currentDate}.01 | © ChaiNET <br />
             This is a early demo version, please do not use it.
           </p>
           <h1 className="text-7xl font-black tracking-wide sm:text-8xl md:text-9xl">
