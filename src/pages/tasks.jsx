@@ -41,9 +41,9 @@ function Tasks() {
     <>
       <div className="h-full overflow-y-scroll">
         <div className="flex flex-col gap-1 py-3 font-Outfit text-4xl font-bold text-chocolate">
-          <div className="flex justify-between">
+          <div className="flex items-center justify-between">
             <h2>To-Do List</h2>
-            <FaSortAmountDown />
+            <FaSortAmountDown size={24} />
           </div>
           <h2 className="text-base font-semibold tracking-wide text-coffee">
             Remaining tasks: {todos.length}
