@@ -6,9 +6,11 @@ import {
   IoApps,
   IoLanguage,
   IoBarChart,
+  IoAlbums,
 } from "react-icons/io5";
 import Error404 from "./pages/error404.jsx";
 import Pomodoro from "./pages/pomodoro.jsx";
+import Tasks from "./pages/tasks.jsx";
 import Settings from "./pages/settings.jsx";
 
 import {
@@ -43,6 +45,22 @@ const AnimatedRoutes = () => {
               transition={{ duration: 0.5 }}
             >
               <Pomodoro />
+            </motion.div>
+          }
+        />
+        {/* Tasks */}
+        <Route
+          path="/tasks"
+          element={
+            <motion.div
+              className="h-full"
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              variants={pageTransition}
+              transition={{ duration: 0.5 }}
+            >
+              <Tasks />
             </motion.div>
           }
         />
@@ -108,6 +126,12 @@ function Navbar() {
           <IoAlarm className="size-5 text-chocolate transition-all duration-500 hover:rotate-45" />
         </a>
         <a
+          className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
+          href="/tasks"
+        >
+          <IoAlbums className="size-5 text-chocolate transition-all duration-500 hover:rotate-45" />
+        </a>
+        <a
           className="transition-all duration-300 hover:text-blax hover:underline"
           href="/settings"
         >
@@ -122,7 +146,7 @@ function App() {
   return (
     <Router>
       <div className="bg-cream selection:bg-chocolate selection:text-cream">
-        <div className="mx-auto h-dvh overflow-clip p-3 px-6 sm:w-5/6 md:w-4/5 lg:w-3/5 2xl:w-1/2">
+        <div className="relative mx-auto h-dvh overflow-clip p-3 px-6 sm:w-5/6 md:w-4/5 lg:w-3/5 2xl:w-1/2">
           <Navbar />
           <div className="mt-3 h-full">
             <AnimatedRoutes />
