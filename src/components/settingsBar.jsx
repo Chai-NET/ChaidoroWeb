@@ -13,10 +13,10 @@ function SettingsPage() {
 
   const navigationItems = [
     "Profile",
-    "Timer",
+    "Application",
     "Language",
     "Themes",
-    "Notifications",
+    "About us",
   ];
 
   const PageUnderDevelopment = () => {
@@ -71,13 +71,16 @@ function SettingsPage() {
             onClick={() => setActivePage(item)}
             className={`rounded-md py-2 transition-all duration-300 ${
               activePage === item
-                ? "font-bold tracking-wider text-chocolate"
+                ? "font-black tracking-wider text-chocolate"
                 : "tracking-tight text-coffee"
             }`}
           >
             {item}
           </button>
         ))}
+        <button className="text-chocolate">
+          <TbSteam />
+        </button>
       </nav>
 
       <div className="flex-grow px-1">{renderContent()}</div>
