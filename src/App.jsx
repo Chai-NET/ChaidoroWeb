@@ -24,9 +24,9 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 
 const pageTransition = {
-  initial: { opacity: 1, x: -25 },
-  animate: { opacity: 1, x: 0 },
-  exit: { opacity: 1, x: 25 },
+  initial: { opacity: 1, y: -35 },
+  animate: { opacity: 1, y: 0 },
+  exit: { opacity: 0, y: 35 },
 };
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -44,7 +44,7 @@ const AnimatedRoutes = () => {
               animate="animate"
               exit="exit"
               variants={pageTransition}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.3 }}
             >
               <Pomodoro />
             </motion.div>
@@ -105,11 +105,20 @@ const AnimatedRoutes = () => {
 
 function Navbar() {
   return (
-    <div className="relative flex justify-between border-b border-chocolate font-Outfit text-xl text-chocolate">
+    <div className="relative z-40 flex justify-between border-b border-chocolate bg-cream font-Outfit text-chocolate">
+      {/* Main Chaidoro Logo */}
       <a
         href="/"
-        className="group flex w-1/2 cursor-pointer items-center gap-0 pr-2 transition-all duration-300 hover:gap-1"
+        className="group flex w-1/2 cursor-pointer items-center gap-1 text-2xl transition-all duration-300 hover:gap-3"
       >
+        <div className="flex justify-between px-1">
+          <h1 className="pl-1 font-Outfit font-semibold tracking-tight">
+            chaidoro
+          </h1>
+          {/* <p className="-mr-96 line-clamp-1 text-nowrap px-1 text-xs tracking-widest text-coffee underline-offset-4 opacity-0 blur-sm transition-all duration-1000 ease-in-out hover:text-blax hover:underline group-hover:mr-0 group-hover:tracking-normal group-hover:text-chocolate group-hover:opacity-100 group-hover:blur-0">
+            v0.01 / Beta
+          </p> */}
+        </div>
         <div className="block aspect-square size-5 rounded-full text-coffee transition-all delay-100 duration-300 group-hover:rotate-12">
           <GiTeapot />
         </div>
@@ -119,12 +128,6 @@ function Navbar() {
         <div className="block aspect-square size-5 rounded-full text-blax transition-all delay-300 duration-300 group-hover:rotate-12">
           <GiTeapot />
         </div>
-        <h1 className="pl-1 font-Outfit font-semibold tracking-tighter">
-          Chaidoro
-        </h1>
-        <p className="-mr-96 line-clamp-1 text-nowrap px-1 text-xs tracking-widest text-coffee underline-offset-4 opacity-0 blur-sm transition-all duration-1000 ease-in-out hover:text-blax hover:underline group-hover:mr-0 group-hover:tracking-normal group-hover:text-chocolate group-hover:opacity-100 group-hover:blur-0">
-          v0.01 / Beta
-        </p>
       </a>
 
       {/* Navigation: */}
