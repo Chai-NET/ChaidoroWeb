@@ -93,7 +93,7 @@ export default function TaskBar() {
                             className="peer aspect-square"
                             onClick={() => handleRemoveTodo(index)}
                           >
-                            <CiSquareCheck className="size-6 fill-chocolate hover:fill-emerald-700" />
+                            <CiSquareCheck className="size-5 fill-chocolate hover:fill-emerald-700" />
                           </button>
                           {/* Task Name */}
                           <div className="line-clamp-1 whitespace-nowrap font-Outfit text-chocolate transition-all duration-500 hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-coffee active:cursor-grabbing group-hover:text-emerald-600 peer-hover:text-emerald-600">
@@ -115,7 +115,7 @@ export default function TaskBar() {
           </ul>
 
           {/* Task Input Field */}
-          <div className="w-full">
+          {/* <div className="w-full">
             <div className="border-t border-coffee bg-cream">
               <div className="flex flex-row justify-between">
                 <div className="flex flex-grow items-center gap-x-1 text-coffee">
@@ -134,12 +134,13 @@ export default function TaskBar() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
           {/* Task Input Field Absolute */}
-          {/* <div className="absolute bottom-0 left-1/2 w-full -translate-x-1/2 pb-6">
+          <div className="absolute bottom-0 left-1/2 w-full -translate-x-1/2 pb-9">
             <div className="z-10 border-t border-coffee bg-cream pb-3">
               <div className="flex flex-row justify-between">
-                <div className="flex-grow">
+                <div className="flex flex-grow items-center gap-x-1 text-coffee">
+                  <CiCircleChevUp className="size-5" />
                   <input
                     onKeyDown={handleKeyPress}
                     type="text"
@@ -147,15 +148,14 @@ export default function TaskBar() {
                     value={task}
                     onChange={(e) => setTask(e.target.value)}
                     id="todos"
-                    placeholder="Here add your task ฅ^•ﻌ•^ฅ"
+                    placeholder="Type here add your task"
                     autoComplete="off"
-                    className="peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest text-chocolate outline-none placeholder:tracking-tight placeholder:text-coffee placeholder:opacity-90 focus:ring-0"
+                    className="peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest text-chocolate outline-none placeholder:select-none placeholder:tracking-tight placeholder:text-coffee placeholder:opacity-90 focus:ring-0"
                   />
                 </div>
               </div>
             </div>
           </div>
-           */}
         </div>
       </div>
     </>
