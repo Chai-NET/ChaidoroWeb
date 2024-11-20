@@ -131,13 +131,13 @@ function Navbar() {
           className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
           href="/"
         >
-          <IoAlarm className="size-5 text-chocolate transition-all duration-500 hover:rotate-45" />
+          <IoAlarm className="size-5 text-chocolate transition-all duration-500" />
         </a>
         <a
           className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
           href="/tasks"
         >
-          <IoAlbums className="size-5 text-chocolate transition-all duration-500 hover:rotate-45" />
+          <IoAlbums className="size-5 text-chocolate transition-all duration-500" />
         </a>
         <a
           className="transition-all duration-300 hover:text-blax hover:underline"

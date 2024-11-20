@@ -39,6 +39,14 @@ export default function TaskBar() {
     }
   };
 
+  const addTask = () => {
+    if (task.trim() !== "") {
+      todos.push(task);
+      setTodos([...todos]);
+      setTask("");
+    }
+  };
+
   const handleRemoveTodo = (index) => {
     const newTodos = todos.filter((_, i) => i !== index);
     setTodos(newTodos);
@@ -140,7 +148,10 @@ export default function TaskBar() {
             <div className="z-10 border-t border-coffee bg-cream pb-3">
               <div className="flex flex-row justify-between">
                 <div className="flex flex-grow items-center gap-x-1 text-coffee">
-                  <CiCircleChevUp className="size-5" />
+                  <CiCircleChevUp
+                    onClick={addTask}
+                    className="size-5 cursor-pointer transition-all duration-300 hover:fill-chocolate"
+                  />
                   <input
                     onKeyDown={handleKeyPress}
                     type="text"
