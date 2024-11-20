@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       screens: {
-        usm: "400px", // Ultra small
+        xsm: "400px", // Ultra small
         uxl: "2000px", // Ultra big
         // => @media (min-width: 2000px) { ... }
       },

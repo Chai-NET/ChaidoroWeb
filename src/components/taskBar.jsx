@@ -145,7 +145,7 @@ export default function TaskBar() {
           </div> */}
           {/* Task Input Field Absolute */}
           <div className="absolute bottom-0 left-1/2 w-full -translate-x-1/2 pb-9">
-            <div className="z-10 border-t border-coffee bg-cream pb-3">
+            <div className="z-10 border-t border-dashed border-coffee bg-cream pb-3">
               <div className="flex flex-row justify-between">
                 <div className="flex flex-grow items-center gap-x-1 text-coffee">
                   <CiCircleChevUp
