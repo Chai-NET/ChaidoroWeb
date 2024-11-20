@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Reorder } from "framer-motion";
 import { GiTeapot, GiCoffeeCup } from "react-icons/gi";
 import { TbSteam } from "react-icons/tb";
+import { CiCircleChevUp, CiSquareCheck } from "react-icons/ci";
 
 export default function TaskBar() {
   const [task, setTask] = useState();
@@ -86,23 +87,23 @@ export default function TaskBar() {
                 {todos.map((todo, index) => (
                   <Reorder.Item value={todo} key={todo}>
                     <li key={index}>
-                      <div className="flex flex-row items-center gap-3 hover:cursor-grab active:cursor-grabbing">
-                        <div className="flex flex-row items-center">
+                      <div className="my-3 flex flex-row items-center gap-3 hover:cursor-grab active:cursor-grabbing">
+                        <div className="flex gap-1">
                           <button
-                            className="peer mb-1 pr-1 font-poppins text-3xl font-thin"
+                            className="peer aspect-square"
                             onClick={() => handleRemoveTodo(index)}
                           >
-                            o
+                            <CiSquareCheck className="size-6 fill-chocolate hover:fill-emerald-700" />
                           </button>
                           {/* Task Name */}
-                          <div className="line-clamp-1 whitespace-nowrap font-Outfit transition-all duration-500 hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-coffee active:cursor-grabbing group-hover:text-red-600 peer-hover:text-red-600">
+                          <div className="line-clamp-1 whitespace-nowrap font-Outfit text-chocolate transition-all duration-500 hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-coffee active:cursor-grabbing group-hover:text-emerald-600 peer-hover:text-emerald-600">
                             {todo}
                           </div>
                         </div>
                         {/* Line betweeen */}
                         <hr className="w-full border-coffee" />
                         {/* Index on the list */}
-                        <div className="item-end flex justify-end peer-has-[:checked]:hidden">
+                        <div className="item-end flex justify-end text-xs font-semibold text-coffee peer-has-[:checked]:hidden">
                           {index + 1}
                         </div>
                       </div>
@@ -118,7 +119,7 @@ export default function TaskBar() {
             <div className="border-t border-coffee bg-cream">
               <div className="flex flex-row justify-between">
                 <div className="flex flex-grow items-center gap-x-1 text-coffee">
-                  <TbSteam />
+                  <CiCircleChevUp />
                   <input
                     onKeyDown={handleKeyPress}
                     type="text"

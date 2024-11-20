@@ -2,6 +2,7 @@ import { div } from "framer-motion/client";
 import React, { useState } from "react";
 import { GiTeapot, GiCoffeeCup } from "react-icons/gi";
 import { TbSteam } from "react-icons/tb";
+import { FaWifi } from "react-icons/fa";
 
 function SettingsPage() {
   const [activePage, setActivePage] = useState("Profile");
@@ -91,7 +92,8 @@ function SettingsPage() {
         {/* Right-aligned button */}
         <div className="invisible absolute flex items-center justify-center space-x-3 text-coffee md:visible md:relative">
           <div className="flex items-center space-x-1 bg-chocolate p-1 px-3 text-sm font-semibold">
-            <TbSteam />
+            <FaWifi />
+
             <p>
               Network <span className="font-light tracking-wider">Version</span>
             </p>
@@ -100,7 +102,7 @@ function SettingsPage() {
       </nav>
 
       <div className="flex-grow px-1">{renderContent()}</div>
-      <PageEndMessage />
+      {/* <PageEndMessage /> */}
     </div>
   );
 }

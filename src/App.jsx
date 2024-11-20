@@ -109,15 +109,10 @@ function Navbar() {
       {/* Main Chaidoro Logo */}
       <a
         href="/"
-        className="group flex w-1/2 cursor-pointer items-center gap-1 text-2xl transition-all duration-300 hover:gap-3"
+        className="group mb-1 flex w-1/2 cursor-pointer items-center gap-1 text-2xl transition-all duration-300 hover:gap-3"
       >
-        <div className="flex justify-between px-1">
-          <h1 className="pl-1 font-Outfit font-semibold tracking-tight">
-            chaidoro
-          </h1>
-          {/* <p className="-mr-96 line-clamp-1 text-nowrap px-1 text-xs tracking-widest text-coffee underline-offset-4 opacity-0 blur-sm transition-all duration-1000 ease-in-out hover:text-blax hover:underline group-hover:mr-0 group-hover:tracking-normal group-hover:text-chocolate group-hover:opacity-100 group-hover:blur-0">
-            v0.01 / Beta
-          </p> */}
+        <div className="flex justify-between pr-1">
+          <h1 className="font-Outfit font-semibold tracking-tight">chaidoro</h1>
         </div>
         <div className="block aspect-square size-5 rounded-full text-coffee transition-all delay-100 duration-300 group-hover:rotate-12">
           <GiTeapot />
