@@ -39,12 +39,16 @@ export default function AppSettings() {
         <h1 className="my-3 text-2xl font-semibold">Language</h1>
         <LanguageSelector />
         <p className="my-3">
-          *Although I tried to add as many translations as I can** note that
-          there can be mistakes. So please if you encounter any mistakes please
-          let me know by mail. ** My friends helped me with translation. You can
-          find their name on info website. *** If you want to translate the
-          website please reach out to me. I would be glad to accept your help
-          and i would give you credits on project.
+          * Although I have made every effort to include as many translations as
+          possible, there may still be errors. If you notice any inaccuracies,
+          please do not hesitate to contact me via email. I would like to
+          acknowledge my friends who contributed to the translations. Their
+          names are listed on the information page of the website.
+          <br /> <br />
+          ** If you are interested in contributing to the translation of this
+          website, I would greatly appreciate your assistance. Your
+          contributions will be credited in the project. Please feel free to
+          reach out to me!
         </p>
         <h1 className="my-12 text-2xl font-semibold">Notifications</h1>
       </div>

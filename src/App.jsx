@@ -19,9 +19,9 @@ import {
 import { AnimatePresence, motion } from "framer-motion";
 
 const pageTransition = {
-  initial: { opacity: 1, y: -35 },
+  initial: { opacity: 0, y: -55 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: 35 },
+  exit: { opacity: 0, y: 55 },
 };
 const AnimatedRoutes = () => {
   const location = useLocation();

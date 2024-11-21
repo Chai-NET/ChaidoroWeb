@@ -14,7 +14,8 @@ function SettingsPage() {
   const date = today.getDate();
   const currentDate = month + "/" + date + "/" + year;
 
-  const navigationItems = ["Profile", "Application", "Themes"];
+  // Profile settings also will be on final version
+  const navigationItems = ["Application", "Themes"];
 
   const PageUnderDevelopment = () => {
     return (
@@ -52,18 +53,12 @@ function SettingsPage() {
 
   const renderContent = () => {
     switch (activePage) {
-      case "Profile":
-        return <PageUnderDevelopment />;
       case "Application":
         return <AppSettings />;
-      case "Language":
-        return <PageUnderDevelopment />;
       case "Themes":
         return <PageUnderDevelopment />;
-      case "Notifications":
-        return <PageUnderDevelopment />;
       default:
-        return <PageUnderDevelopment />;
+        return <AppSettings />;
     }
   };
 
