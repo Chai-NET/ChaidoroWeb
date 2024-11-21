@@ -100,7 +100,7 @@ const AnimatedRoutes = () => {
 
 function Navbar() {
   return (
-    <div className="relative z-40 flex items-center justify-between border-b border-chocolate bg-cream pb-2 font-Outfit">
+    <div className="relative z-40 flex items-center justify-between border-b border-chocolate bg-cream pb-1 font-Outfit">
       {/* Main Chaidoro Logo */}
       <a
         href="/"
@@ -118,24 +118,24 @@ function Navbar() {
 
       {/* Navigation: */}
 
-      <div className="flex items-center justify-end space-x-3 rounded-md bg-chocolate p-2 px-3 text-xs font-semibold capitalize">
-        <a className="group flex items-center gap-2" href="/">
-          <FaRegClock className="size-4 fill-cream transition-all duration-500 group-hover:animate-spin-slow" />
-          <p className="invisible absolute font-light text-cream md:visible md:relative">
+      <div className="text-md flex items-center justify-end space-x-3 rounded-md font-medium capitalize">
+        {/* <a className="group flex items-center gap-2" href="/">
+          <FaRegClock className="size-4 fill-chocolate transition-all duration-500 group-hover:animate-spin-slow" />
+          <p className="invisible absolute text-chocolate md:visible md:relative">
             Clock
           </p>
         </a>
-        <div className="h-4 w-[1px] bg-coffee" />
+        <div className="h-4 w-[1px] bg-chocolate" /> */}
         <a className="flex items-center gap-2" href="/tasks">
-          <FaListOl className="size-4 fill-cream transition-all duration-500" />
-          <p className="invisible absolute font-light text-cream md:visible md:relative">
+          <FaListOl className="size-4 fill-chocolate transition-all duration-500" />
+          <p className="invisible absolute text-chocolate md:visible md:relative">
             To-Do
           </p>
         </a>
-        <div className="h-4 w-[1px] bg-coffee" />
+        <div className="h-4 w-[1px] bg-chocolate" />
         <a className="group flex items-center gap-2" href="/settings">
-          <BsGearWideConnected className="size-4 fill-cream transition-all duration-500 group-hover:animate-spin" />
-          <p className="invisible absolute font-light text-cream md:visible md:relative">
+          <BsGearWideConnected className="size-4 fill-chocolate transition-all duration-500 group-hover:animate-spin" />
+          <p className="invisible absolute text-chocolate md:visible md:relative">
             Settings
           </p>
         </a>
