@@ -2,15 +2,9 @@ import React from "react";
 import { GiTeapot } from "react-icons/gi";
 
 import "./App.css";
-import {
-  IoSettings,
-  IoAlarm,
-  IoApps,
-  IoLanguage,
-  IoBarChart,
-  IoAlbums,
-} from "react-icons/io5";
-import { FaClock, FaListOl, FaGear } from "react-icons/fa6";
+import { BsGearWideConnected } from "react-icons/bs";
+
+import { FaClock, FaRegClock, FaListOl, FaGear } from "react-icons/fa6";
 import { CiAlarmOn, CiBoxList, CiSettings } from "react-icons/ci";
 
 import Error404 from "./pages/error404.jsx";
@@ -108,41 +102,32 @@ const AnimatedRoutes = () => {
 
 function Navbar() {
   return (
-    <div className="relative z-40 flex justify-between border-b border-chocolate bg-cream font-Outfit text-chocolate">
+    <div className="relative z-40 flex items-center justify-between border-b border-chocolate bg-cream font-Outfit text-chocolate">
       {/* Main Chaidoro Logo */}
       <a
         href="/"
         className="group mb-1 flex w-1/2 cursor-pointer items-center gap-0 transition-all duration-300 hover:gap-2"
       >
-        <GiTeapot className="block aspect-square size-6 rounded-full text-coffee/50 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
-        <GiTeapot className="block aspect-square size-6 rounded-full text-coffee transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
-        <GiTeapot className="block aspect-square size-6 rounded-full text-chocolate transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-coffee/50 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-coffee transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-chocolate transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
         <div className="xsm:visible xsm:relative invisible absolute flex justify-between pl-1">
-          <h1 className="font-Outfit text-xl font-semibold tracking-tight">
+          <h1 className="font-Outfit text-2xl font-semibold tracking-tight">
             Chaidoro
           </h1>
         </div>
       </a>
 
       {/* Navigation: */}
-      <div className="flex items-center justify-end gap-5 text-base font-semibold capitalize sm:w-1/2">
-        <a
-          className="underline-offset-4 transition-all duration-300 hover:text-blax"
-          href="/"
-        >
-          <FaClock className="size-4 text-chocolate transition-all duration-500 hover:animate-spin-slow" />
+      <div className="bg- mb-3 flex items-center justify-end gap-3 rounded-full bg-coffee/45 p-2 px-3 text-base font-semibold capitalize">
+        <a href="/">
+          <FaRegClock className="size-4 stroke-chocolate transition-all duration-500 hover:animate-spin-slow" />
         </a>
-        <a
-          className="underline-offset-4 transition-all duration-300 hover:text-blax"
-          href="/tasks"
-        >
-          <FaListOl className="size-4 text-chocolate transition-all duration-500" />
+        <a href="/tasks">
+          <FaListOl className="size-4 stroke-chocolate transition-all duration-500" />
         </a>
-        <a
-          className="transition-all duration-300 hover:text-blax hover:underline"
-          href="/settings"
-        >
-          <FaGear className="size-4 text-chocolate transition-all duration-500 hover:animate-spin" />
+        <a href="/settings">
+          <BsGearWideConnected className="size-4 stroke-chocolate transition-all duration-500 hover:animate-spin" />
         </a>
       </div>
     </div>
