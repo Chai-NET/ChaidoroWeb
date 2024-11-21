@@ -3,9 +3,7 @@ import { GiTeapot } from "react-icons/gi";
 
 import "./App.css";
 import { BsGearWideConnected } from "react-icons/bs";
-
-import { FaClock, FaRegClock, FaListOl, FaGear } from "react-icons/fa6";
-import { CiAlarmOn, CiBoxList, CiSettings } from "react-icons/ci";
+import { FaRegClock, FaListOl } from "react-icons/fa6";
 
 import Error404 from "./pages/error404.jsx";
 import Pomodoro from "./pages/pomodoro.jsx";
@@ -102,32 +100,44 @@ const AnimatedRoutes = () => {
 
 function Navbar() {
   return (
-    <div className="relative z-40 flex items-center justify-between border-b border-chocolate bg-cream font-Outfit text-chocolate">
+    <div className="relative z-40 flex items-center justify-between border-b border-chocolate bg-cream pb-2 font-Outfit">
       {/* Main Chaidoro Logo */}
       <a
         href="/"
-        className="group mb-1 flex w-1/2 cursor-pointer items-center gap-0 transition-all duration-300 hover:gap-2"
+        className="group flex w-1/2 cursor-pointer items-center gap-0 transition-all duration-300 hover:gap-2"
       >
         <GiTeapot className="block aspect-square size-8 rounded-full text-coffee/50 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
         <GiTeapot className="block aspect-square size-8 rounded-full text-coffee transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
         <GiTeapot className="block aspect-square size-8 rounded-full text-chocolate transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
         <div className="xsm:visible xsm:relative invisible absolute flex justify-between pl-1">
-          <h1 className="font-Outfit text-2xl font-semibold tracking-tight">
+          <h1 className="font-Outfit text-2xl font-semibold tracking-tight text-chocolate">
             Chaidoro
           </h1>
         </div>
       </a>
 
       {/* Navigation: */}
-      <div className="bg- mb-3 flex items-center justify-end gap-3 rounded-full bg-coffee/45 p-2 px-3 text-base font-semibold capitalize">
-        <a href="/">
-          <FaRegClock className="size-4 stroke-chocolate transition-all duration-500 hover:animate-spin-slow" />
+
+      <div className="flex items-center justify-end space-x-3 rounded-md bg-chocolate p-2 px-3 text-xs font-semibold capitalize">
+        <a className="group flex items-center gap-2" href="/">
+          <FaRegClock className="size-4 fill-cream transition-all duration-500 group-hover:animate-spin-slow" />
+          <p className="invisible absolute font-light text-cream md:visible md:relative">
+            Clock
+          </p>
         </a>
-        <a href="/tasks">
-          <FaListOl className="size-4 stroke-chocolate transition-all duration-500" />
+        <div className="h-4 w-[1px] bg-coffee" />
+        <a className="flex items-center gap-2" href="/tasks">
+          <FaListOl className="size-4 fill-cream transition-all duration-500" />
+          <p className="invisible absolute font-light text-cream md:visible md:relative">
+            To-Do
+          </p>
         </a>
-        <a href="/settings">
-          <BsGearWideConnected className="size-4 stroke-chocolate transition-all duration-500 hover:animate-spin" />
+        <div className="h-4 w-[1px] bg-coffee" />
+        <a className="group flex items-center gap-2" href="/settings">
+          <BsGearWideConnected className="size-4 fill-cream transition-all duration-500 group-hover:animate-spin" />
+          <p className="invisible absolute font-light text-cream md:visible md:relative">
+            Settings
+          </p>
         </a>
       </div>
     </div>
