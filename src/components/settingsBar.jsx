@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { GiTeapot, GiCoffeeCup } from "react-icons/gi";
 import { TbSteam } from "react-icons/tb";
 import { FaWifi } from "react-icons/fa";
+import AppSettings from "./AppSettings.jsx";
 
 function SettingsPage() {
   const [activePage, setActivePage] = useState("Profile");
@@ -13,7 +14,7 @@ function SettingsPage() {
   const date = today.getDate();
   const currentDate = month + "/" + date + "/" + year;
 
-  const navigationItems = ["Profile", "Application", "Language", "Themes"];
+  const navigationItems = ["Profile", "Application", "Themes"];
 
   const PageUnderDevelopment = () => {
     return (
@@ -53,8 +54,8 @@ function SettingsPage() {
     switch (activePage) {
       case "Profile":
         return <PageUnderDevelopment />;
-      case "Timer":
-        return <PageUnderDevelopment />;
+      case "Application":
+        return <AppSettings />;
       case "Language":
         return <PageUnderDevelopment />;
       case "Themes":
