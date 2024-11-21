@@ -10,6 +10,7 @@ import {
   IoBarChart,
   IoAlbums,
 } from "react-icons/io5";
+import { FaClock, FaListOl, FaGear } from "react-icons/fa6";
 import { CiAlarmOn, CiBoxList, CiSettings } from "react-icons/ci";
 
 import Error404 from "./pages/error404.jsx";
@@ -111,41 +112,37 @@ function Navbar() {
       {/* Main Chaidoro Logo */}
       <a
         href="/"
-        className="group mb-1 flex w-1/2 cursor-pointer items-center gap-1 text-xl transition-all duration-300 hover:gap-3"
+        className="group mb-1 flex w-1/2 cursor-pointer items-center gap-0 transition-all duration-300 hover:gap-2"
       >
-        <div className="block aspect-square size-5 rounded-full text-coffee transition-all delay-100 duration-300 group-hover:rotate-12">
-          <GiTeapot />
-        </div>
-        <div className="block aspect-square size-5 rounded-full text-chocolate transition-all delay-200 duration-300 group-hover:rotate-12">
-          <GiTeapot />
-        </div>
-        <div className="block aspect-square size-5 rounded-full text-blax transition-all delay-300 duration-300 group-hover:rotate-12">
-          <GiTeapot />
-        </div>
+        <GiTeapot className="block aspect-square size-6 rounded-full text-coffee/50 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-6 rounded-full text-coffee transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-6 rounded-full text-chocolate transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
         <div className="xsm:visible xsm:relative invisible absolute flex justify-between pl-1">
-          <h1 className="font-Outfit font-semibold tracking-tight">Chaidoro</h1>
+          <h1 className="font-Outfit text-xl font-semibold tracking-tight">
+            Chaidoro
+          </h1>
         </div>
       </a>
 
       {/* Navigation: */}
-      <div className="flex items-center justify-end gap-3 text-base font-semibold capitalize sm:w-1/2">
+      <div className="flex items-center justify-end gap-5 text-base font-semibold capitalize sm:w-1/2">
         <a
-          className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
+          className="underline-offset-4 transition-all duration-300 hover:text-blax"
           href="/"
         >
-          <CiAlarmOn className="size-5 text-chocolate transition-all duration-500" />
+          <FaClock className="size-4 text-chocolate transition-all duration-500 hover:animate-spin-slow" />
         </a>
         <a
-          className="underline-offset-4 transition-all duration-300 hover:text-blax hover:underline"
+          className="underline-offset-4 transition-all duration-300 hover:text-blax"
           href="/tasks"
         >
-          <CiBoxList className="size-5 text-chocolate transition-all duration-500" />
+          <FaListOl className="size-4 text-chocolate transition-all duration-500" />
         </a>
         <a
           className="transition-all duration-300 hover:text-blax hover:underline"
           href="/settings"
         >
-          <CiSettings className="size-5 text-chocolate transition-all duration-500 hover:rotate-45" />
+          <FaGear className="size-4 text-chocolate transition-all duration-500 hover:animate-spin" />
         </a>
       </div>
     </div>
