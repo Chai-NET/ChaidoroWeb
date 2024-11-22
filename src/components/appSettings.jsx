@@ -13,13 +13,19 @@ export default function AppSettings() {
           <div className="flex flex-col items-center gap-3 md:flex-row">
             <div className="mx-auto flex w-2/3 items-center justify-between">
               <div className="flex h-32 w-32 items-center justify-center rounded-2xl border-b border-coffee bg-chocolate shadow-sm shadow-blax/45">
-                <p className="text-6xl font-black text-cream">25</p>
+                <p className="text-shadow text-6xl font-black text-cream shadow-blax/75">
+                  25
+                </p>
               </div>
               <div className="flex h-32 w-32 items-center justify-center rounded-2xl border-b border-chocolate bg-coffee shadow-sm shadow-blax/45">
-                <p className="text-6xl font-black text-chocolate">5</p>
+                <p className="text-shadow text-6xl font-black text-cream shadow-blax/75">
+                  5
+                </p>
               </div>
               <div className="flex h-32 w-32 items-center justify-center rounded-2xl border-b border-chocolate bg-coffee shadow-sm shadow-blax/45">
-                <p className="text-6xl font-black text-chocolate">15</p>
+                <p className="text-shadow text-6xl font-black text-cream shadow-blax/75">
+                  15
+                </p>
               </div>
             </div>
           </div>
