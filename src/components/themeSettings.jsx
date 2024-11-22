@@ -7,11 +7,13 @@ export default function ThemeSettings() {
           <p className="">Custom premade themes.</p>
         </div>
         <div className="my-3 flex items-center justify-between gap-3">
-          <div className="h-80 w-64 bg-chocolate"></div>
-          <div className="h-80 w-64 bg-chocolate"></div>
-          <div className="h-80 w-64 bg-chocolate"></div>
+          <div className="h-80 w-64 rounded-2xl border border-chocolate bg-coffee/75 shadow shadow-blax/45"></div>
+          <div className="h-80 w-64 rounded-2xl border border-chocolate bg-coffee/75 shadow shadow-blax/45"></div>
+          <div className="h-80 w-64 rounded-2xl border border-chocolate bg-coffee/75 shadow shadow-blax/45"></div>
         </div>
-        <div className="my-3 h-[1px] w-full bg-chocolate" />
+
+        {/* Divider Line */}
+        <div className="my-6 h-[1px] w-full bg-chocolate" />
         <div className="my-3">
           <h1 className="text-2xl font-semibold">Your Themes</h1>
           <p className="">You can make your own custom theme.</p>
