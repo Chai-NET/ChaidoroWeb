@@ -8,28 +8,42 @@ export default function AppSettings() {
         <div>
           <div className="my-3">
             <h1 className="text-2xl font-semibold">Clock</h1>
-            <p className="">Here will be the settings about Clock / Timer.</p>
+            <p className="">Period of focus / Time format </p>
           </div>
-          <div className="flex flex-col items-center gap-3 md:flex-row">
-            <div className="mx-auto flex w-2/3 items-center justify-between">
-              <div className="flex h-32 w-32 items-center justify-center rounded-2xl border-b border-coffee bg-chocolate shadow-sm shadow-blax/45">
-                <p className="text-shadow text-6xl font-black text-cream shadow-blax/75">
-                  25
-                </p>
-              </div>
-              <div className="flex h-32 w-32 items-center justify-center rounded-2xl border-b border-chocolate bg-coffee shadow-sm shadow-blax/45">
-                <p className="text-shadow text-6xl font-black text-cream shadow-blax/75">
-                  5
-                </p>
-              </div>
-              <div className="flex h-32 w-32 items-center justify-center rounded-2xl border-b border-chocolate bg-coffee shadow-sm shadow-blax/45">
-                <p className="text-shadow text-6xl font-black text-cream shadow-blax/75">
-                  15
-                </p>
-              </div>
+          {/* Time Period Settings */}
+          <div className="mx-auto flex w-full items-center justify-between gap-3">
+            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-blax bg-chocolate shadow-sm shadow-blax/45">
+              <p className="text-shadow text-6xl font-black text-cream shadow-blax/75">
+                25
+              </p>
+              <span className="text-shadow invisible absolute w-1 px-2 text-sm leading-none text-cream shadow-blax sm:visible sm:relative">
+                Focus time
+              </span>
+            </div>
+            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-chocolate bg-coffee shadow-sm shadow-blax/45">
+              <p className="text-shadow text-6xl font-black text-cream shadow-blax/75">
+                5
+              </p>
+              <span className="text-shadow invisible absolute w-1 px-2 text-sm leading-none text-cream shadow-blax sm:visible sm:relative">
+                Short break
+              </span>
+            </div>
+            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-chocolate bg-coffee/45 shadow-sm shadow-blax/45">
+              <p className="text-shadow text-6xl font-black text-chocolate shadow-coffee/75">
+                15
+              </p>
+              <span className="text-shadow invisible absolute w-1 px-2 text-sm leading-none text-chocolate shadow-coffee sm:visible sm:relative">
+                Long break
+              </span>
             </div>
           </div>
-          <h2>24 hour format</h2>
+          <p className="mt-3 tracking-wide">
+            * We highly encourage you to not change 25 focus / 5 break format.
+            Due to feedback from people it seems like 25 minute work format is
+            the best for most of the people.
+          </p>
+          {/* 12/24 Hour format settings */}
+          {/* <h2>24 hour format</h2> */}
         </div>
 
         {/* Divider Line */}
@@ -41,14 +55,14 @@ export default function AppSettings() {
           <p className="">We currently have 3 different languages.</p>
         </div>
         <LanguageSelector />
-        <p className="my-3">
-          * Although I have made every effort to include as many translations as
-          possible, there may still be errors. If you notice any inaccuracies,
-          please do not hesitate to contact me via email. I would like to
-          acknowledge my friends who contributed to the translations. Their
-          names are listed on the information page of the website.
+        <p className="my-3 tracking-wide">
+          ** Although I have made every effort to include as many translations
+          as possible, there may still be errors. If you notice any
+          inaccuracies, please do not hesitate to contact me via email. I would
+          like to acknowledge my friends who contributed to the translations.
+          Their names are listed on the information page of the website.
           <br /> <br />
-          ** If you are interested in contributing to the translation of this
+          *** If you are interested in contributing to the translation of this
           website, I would greatly appreciate your assistance. Your
           contributions will be credited in the project. Please feel free to
           reach out to me!

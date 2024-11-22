@@ -15,8 +15,11 @@ export default function ThemeSettings() {
         {/* Divider Line */}
         <div className="my-6 h-[1px] w-full bg-chocolate" />
         <div className="my-3">
-          <h1 className="text-2xl font-semibold">Your Themes</h1>
-          <p className="">You can make your own custom theme.</p>
+          <h1 className="text-2xl font-semibold">Your custom theme</h1>
+          <p className="">
+            You can make your own custom theme. You can also use HEX value
+            codes.
+          </p>
         </div>
         <div className="flex gap-3">
           <div className="size-9 rounded-full bg-chocolate"></div>
