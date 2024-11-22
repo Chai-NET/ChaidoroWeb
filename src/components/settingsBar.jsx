@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import { GiTeapot, GiCoffeeCup } from "react-icons/gi";
 import { TbSteam } from "react-icons/tb";
 import { FaWifi } from "react-icons/fa";
-import AppSettings from "./AppSettings.jsx";
+import AppSettings from "./appSettings.jsx";
+import ThemeSettings from "./themeSettings.jsx";
 
 function SettingsPage() {
   const [activePage, setActivePage] = useState("Profile");
@@ -56,20 +57,20 @@ function SettingsPage() {
       case "Application":
         return <AppSettings />;
       case "Themes":
-        return <PageUnderDevelopment />;
+        return <ThemeSettings />;
       default:
         return <AppSettings />;
     }
   };
 
   return (
-    <div className="flex h-full flex-col justify-between pt-3 font-Outfit">
-      <div className="h-9 w-full font-Outfit">
+    <div className="flex h-full flex-col justify-between font-Outfit">
+      <div className="my-1 mt-3 h-9 w-full font-Outfit">
         <h3 className="text-3xl font-bold text-chocolate">Settings</h3>
       </div>
-      <nav className="my-3 flex w-full gap-x-6 border-b border-chocolate px-1">
+      <nav className="flex w-full gap-x-6 border-b border-chocolate px-1">
         {/* Left-aligned group of navigation buttons */}
-        <div className="flex flex-grow space-x-3 xl:space-x-6 2xl:space-x-9">
+        <div className="flex flex-grow space-x-3 xsm:space-x-6 xl:space-x-6 2xl:space-x-9">
           {navigationItems.map((item) => (
             <button
               key={item}
@@ -89,16 +90,13 @@ function SettingsPage() {
         <div className="invisible absolute flex items-center justify-center space-x-3 text-coffee md:visible md:relative">
           <div className="flex items-center space-x-1 bg-chocolate p-1 px-3 text-sm font-semibold">
             <FaWifi />
-
             <p>
               Network <span className="font-light tracking-wider">Version</span>
             </p>
           </div>
         </div>
       </nav>
-
       <div className="flex-grow px-1">{renderContent()}</div>
-      {/* <PageEndMessage /> */}
     </div>
   );
 }
