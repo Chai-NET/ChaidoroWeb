@@ -4,7 +4,7 @@ import TaskBar from "../components/taskBar.jsx";
 function Pomodoro() {
   return (
     <>
-      <div className="relative flex h-full flex-col bg-cream">
+      <div className="bg-bgPrimary relative flex h-full flex-col">
         <Clock />
         <TaskBar />
       </div>

@@ -24,18 +24,18 @@ function Settings() {
   const PageUnderDevelopment = () => {
     return (
       <div className="relative flex select-none flex-col items-center justify-center gap-3 py-12 text-center font-Outfit">
-        <h1 className="text-xl font-light text-chocolate/45 md:text-2xl">
+        <h1 className="text-primary/45 text-xl font-light md:text-2xl">
           Currently under development
         </h1>
-        <p className="tracking-tight text-coffee/75">
+        <p className="text-secondary/75 tracking-tight">
           The <span className="lowercase">{activePage}</span> page is currently
           under development <br /> please be patient while I work on it.
           <br />
           {currentDate}.01 | © ChaiNET <br />
         </p>
-        <div className="flex select-none items-center text-5xl font-black tracking-wide text-coffee/15 md:text-7xl">
+        <div className="text-secondary/15 flex select-none items-center text-5xl font-black tracking-wide md:text-7xl">
           <GiTeapot />
-          <TbSteam size={35} className="text-chocolate/30" />
+          <TbSteam size={35} className="text-primary/30" />
           <div className="scale-x-[-1]">
             <GiTeapot />
           </div>
@@ -46,7 +46,7 @@ function Settings() {
 
   const PageEndMessage = () => {
     return (
-      <div className="flex h-96 w-full items-center justify-between gap-3 text-chocolate">
+      <div className="text-primary flex h-96 w-full items-center justify-between gap-3">
         <div className="font-light tracking-wide">
           <h1>Developed under the order of SRC.</h1>
           <h2>All rights belong to SRC and ChaiNET</h2>
@@ -69,9 +69,9 @@ function Settings() {
   return (
     <div className="flex h-full w-full flex-col justify-between font-Outfit">
       <div className="my-1 mt-3 h-9 w-full font-Outfit">
-        <h3 className="text-3xl font-bold text-chocolate">{t("settings")}</h3>
+        <h3 className="text-primary text-3xl font-bold">{t("settings")}</h3>
       </div>
-      <nav className="flex w-full gap-x-6 border-b border-chocolate px-1">
+      <nav className="border-primary flex w-full gap-x-6 border-b px-1">
         {/* Left-aligned group of navigation buttons */}
         <div className="flex flex-grow space-x-3 xsm:space-x-6 xl:space-x-6 2xl:space-x-9">
           {navigationItems.map((item) => (
@@ -80,8 +80,8 @@ function Settings() {
               onClick={() => setActivePage(item)}
               className={`py-2 text-sm transition-all duration-300 hover:text-blax lg:text-base ${
                 activePage === item
-                  ? "font-black tracking-wider text-chocolate"
-                  : "tracking-tight text-coffee"
+                  ? "text-primary font-black tracking-wider"
+                  : "text-secondary tracking-tight"
               }`}
             >
               {item}
@@ -90,8 +90,8 @@ function Settings() {
         </div>
 
         {/* Right-aligned button */}
-        <div className="invisible absolute flex items-center justify-center space-x-3 text-coffee md:visible md:relative">
-          <div className="flex items-center space-x-1 bg-chocolate p-1 px-3 text-sm font-semibold">
+        <div className="text-secondary invisible absolute flex items-center justify-center space-x-3 md:visible md:relative">
+          <div className="bg-primary flex items-center space-x-1 p-1 px-3 text-sm font-semibold">
             <FaWifi />
             <p>
               {t("network")}{" "}

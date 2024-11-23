@@ -24,7 +24,7 @@ function Clock() {
   return (
     <>
       <div className="flex items-center justify-center">
-        <div className="w-full bg-chocolate py-32 text-center font-AlbertSans text-cream">
+        <div className="bg-primary text-bgPrimary w-full py-32 text-center font-AlbertSans">
           <p className="font-RobotoCondensed text-xs font-light proportional-nums tracking-widest">
             {t("clockMessage")}
           </p>

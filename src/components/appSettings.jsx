@@ -6,7 +6,7 @@ export default function AppSettings() {
   const { t } = useTranslation();
   return (
     <>
-      <div className="h-dvh overflow-auto pb-64 font-Outfit text-chocolate">
+      <div className="text-primary h-dvh overflow-auto pb-64 font-Outfit">
         {/* Clock Settings */}
         <div>
           <div className="my-3">
@@ -15,27 +15,27 @@ export default function AppSettings() {
           </div>
           {/* Time Period Settings */}
           <div className="mx-auto flex w-full items-center justify-between gap-3">
-            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-blax bg-chocolate shadow-sm shadow-blax/45">
-              <p className="text-6xl font-black text-cream shadow-blax/75 text-shadow">
+            <div className="bg-primary flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-blax shadow-sm shadow-blax/45">
+              <p className="text-bgPrimary text-6xl font-black shadow-blax/75 text-shadow">
                 25
               </p>
-              <span className="invisible absolute w-1 px-2 text-xs leading-none text-cream shadow-blax text-shadow sm:visible sm:relative">
+              <span className="text-bgPrimary invisible absolute w-1 px-2 text-xs leading-none shadow-blax text-shadow sm:visible sm:relative">
                 {t("focusTime")}
               </span>
             </div>
-            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-chocolate bg-coffee shadow-sm shadow-blax/45">
-              <p className="text-6xl font-black text-cream shadow-blax/75 text-shadow">
+            <div className="border-primary bg-secondary flex h-32 flex-grow items-center justify-center rounded-2xl border-b shadow-sm shadow-blax/45">
+              <p className="text-bgPrimary text-6xl font-black shadow-blax/75 text-shadow">
                 5
               </p>
-              <span className="invisible absolute w-1 px-2 text-xs leading-none text-cream shadow-blax text-shadow sm:visible sm:relative">
+              <span className="text-bgPrimary invisible absolute w-1 px-2 text-xs leading-none shadow-blax text-shadow sm:visible sm:relative">
                 {t("shortBreak")}
               </span>
             </div>
-            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-chocolate bg-coffee/45 shadow-sm shadow-blax/45">
-              <p className="text-6xl font-black text-chocolate shadow-coffee/75 text-shadow">
+            <div className="border-primary bg-secondary/45 flex h-32 flex-grow items-center justify-center rounded-2xl border-b shadow-sm shadow-blax/45">
+              <p className="text-primary shadow-secondary/75 text-6xl font-black text-shadow">
                 15
               </p>
-              <span className="invisible absolute w-1 px-2 text-xs leading-none text-chocolate shadow-coffee text-shadow sm:visible sm:relative">
+              <span className="text-primary shadow-secondary invisible absolute w-1 px-2 text-xs leading-none text-shadow sm:visible sm:relative">
                 {t("longBreak")}
               </span>
             </div>
@@ -46,7 +46,7 @@ export default function AppSettings() {
         </div>
 
         {/* Divider Line */}
-        <div className="my-6 h-[1px] w-full bg-chocolate" />
+        <div className="bg-primary my-6 h-[1px] w-full" />
         {/* Language Settings */}
 
         <div className="mb-3">
@@ -61,9 +61,9 @@ export default function AppSettings() {
         </p>
         {/* Other Settings */}
         {/* <h1 className="my-12 text-2xl font-semibold">Notifications</h1>
-        <div className="size-32 bg-chocolate"></div>
+        <div className="size-32 bg-primary"></div>
         <h1 className="my-12 text-2xl font-semibold">Time format</h1>
-        <div className="size-32 bg-chocolate"></div> */}
+        <div className="size-32 bg-primary"></div> */}
       </div>
     </>
   );
