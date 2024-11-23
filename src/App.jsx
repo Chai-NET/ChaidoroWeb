@@ -1,4 +1,6 @@
-import React from "react";
+import { React, useEffect, useState } from "react";
+import "./i18n";
+import { useTranslation } from "react-i18next";
 import { GiTeapot } from "react-icons/gi";
 
 import "./App.css";
@@ -99,6 +101,7 @@ const AnimatedRoutes = () => {
 };
 
 function Navbar() {
+  const { t, i18n } = useTranslation();
   return (
     <div className="relative z-40 flex items-center justify-between border-b border-chocolate bg-cream pb-1 font-Outfit">
       {/* Main Chaidoro Logo */}
@@ -109,9 +112,9 @@ function Navbar() {
         <GiTeapot className="block aspect-square size-8 rounded-full text-coffee/50 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
         <GiTeapot className="block aspect-square size-8 rounded-full text-coffee transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
         <GiTeapot className="block aspect-square size-8 rounded-full text-chocolate transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
-        <div className="xsm:visible xsm:relative invisible absolute flex justify-between pl-1">
+        <div className="invisible absolute flex justify-between pl-1 xsm:visible xsm:relative">
           <h1 className="font-Outfit text-2xl font-semibold tracking-tight text-chocolate">
-            Chaidoro
+            {t("chaidoro")}
           </h1>
         </div>
       </a>
@@ -145,6 +148,26 @@ function Navbar() {
 }
 
 function App() {
+  const { t, i18n } = useTranslation();
+
+  // Slower version (defaults to english but then auto changes to local storage value)
+  const [selectedLanguage, setSelectedLanguage] = useState(() => {
+    const savedLanguage = localStorage.getItem("selectedLanguage");
+    return (
+      (savedLanguage && JSON.parse(savedLanguage)) || {
+        name: "English",
+        code: "en",
+        flag: "🇬🇧",
+      }
+    );
+  });
+
+  useEffect(() => {
+    i18n.changeLanguage(selectedLanguage.code);
+    console.log(selectedLanguage.code);
+    localStorage.setItem("selectedLanguage", JSON.stringify(selectedLanguage));
+  }, [selectedLanguage, i18n]);
+  console.log("Current language:", i18n.language);
   return (
     <Router>
       <div className="bg-cream selection:bg-chocolate selection:text-cream">

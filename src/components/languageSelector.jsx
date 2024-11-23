@@ -1,19 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { IoChevronDown } from "react-icons/io5";
+import "../i18n"; // Assuming your i18n configuration is imported here
+import { useTranslation } from "react-i18next";
 
 export default function SearchableDropdown() {
-  const [isOpen, setIsOpen] = useState(false);
-  const [search, setSearch] = useState("");
-  const [selectedLanguage, setSelectedLanguage] = useState({
-    name: "English",
-    flag: "🇬🇧",
-  });
+  const { i18n } = useTranslation();
 
   const languages = [
     { name: "English", code: "en", flag: "🇬🇧" },
     { name: "Lithuanian | Lietuvių", code: "lt", flag: "🇱🇹" },
     { name: "Chinese | 中国人", code: "zh", flag: "🇨🇳" },
   ];
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [search, setSearch] = useState("");
+  const [selectedLanguage, setSelectedLanguage] = useState(() => {
+    const savedLanguage = localStorage.getItem("selectedLanguage");
+    return (
+      (savedLanguage && JSON.parse(savedLanguage)) || {
+        name: "English",
+        code: "en",
+        flag: "🇬🇧",
+      }
+    );
+  });
+
+  useEffect(() => {
+    i18n.changeLanguage(selectedLanguage.code);
+    console.log(selectedLanguage.code);
+    localStorage.setItem("selectedLanguage", JSON.stringify(selectedLanguage));
+  }, [selectedLanguage, i18n]);
 
   const filteredLanguages = languages.filter((lang) =>
     lang.name.toLowerCase().includes(search.toLowerCase()),
@@ -29,7 +45,7 @@ export default function SearchableDropdown() {
         }`}
       >
         <span className="flex items-center">
-          <span className="">{selectedLanguage.flag}</span>
+          <span>{selectedLanguage.flag}</span>
           <div className="mx-3 h-3 w-[1px] bg-chocolate"></div>
           {selectedLanguage.name}
         </span>
@@ -64,13 +80,13 @@ export default function SearchableDropdown() {
                 }}
                 className="flex cursor-pointer items-center px-6 py-3 text-gray-700 hover:bg-coffee/45"
               >
-                <span className="">{language.flag}</span>
+                <span>{language.flag}</span>
                 <div className="mx-3 h-3 w-[1px] bg-chocolate"></div>
                 {language.name}
               </li>
             ))}
 
-            {/* No Matches Found */}
+            {/* No matches found message */}
             {filteredLanguages.length === 0 && (
               <li className="px-4 py-2 text-chocolate">No matches found</li>
             )}
