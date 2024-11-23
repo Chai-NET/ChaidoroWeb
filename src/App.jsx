@@ -109,7 +109,7 @@ function Navbar() {
         href="/"
         className="group flex w-1/2 cursor-pointer items-center gap-0 transition-all duration-300 hover:gap-2"
       >
-        <GiTeapot className="text-secondary/50 block aspect-square size-8 rounded-full transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="text-secondary45 block aspect-square size-8 rounded-full transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
         <GiTeapot className="text-secondary block aspect-square size-8 rounded-full transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
         <GiTeapot className="text-primary block aspect-square size-8 rounded-full transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
         <div className="invisible absolute flex justify-between pl-1 xsm:visible xsm:relative">

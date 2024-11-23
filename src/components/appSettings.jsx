@@ -31,8 +31,8 @@ export default function AppSettings() {
                 {t("shortBreak")}
               </span>
             </div>
-            <div className="border-primary bg-secondary/45 flex h-32 flex-grow items-center justify-center rounded-2xl border-b shadow-sm shadow-blax/45">
-              <p className="text-primary shadow-secondary/75 text-6xl font-black text-shadow">
+            <div className="border-primary bg-secondary45 flex h-32 flex-grow items-center justify-center rounded-2xl border-b shadow-sm shadow-blax/45">
+              <p className="text-primary shadow-secondary45 text-6xl font-black text-shadow">
                 15
               </p>
               <span className="text-primary shadow-secondary invisible absolute w-1 px-2 text-xs leading-none text-shadow sm:visible sm:relative">

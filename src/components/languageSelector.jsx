@@ -40,7 +40,7 @@ export default function SearchableDropdown() {
       {/* Dropdown Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`text-primary border-secondary bg-secondary/45 hover:bg-secondary/65 z-20 flex w-full items-center justify-between px-6 py-3 text-left shadow-sm outline-none transition-colors duration-300 ${
+        className={`text-primary border-secondary bg-secondary45 hover:bg-secondary z-20 flex w-full items-center justify-between px-6 py-3 text-left shadow-sm outline-none transition-colors duration-300 ${
           isOpen ? "rounded-t-md border-x border-t" : "rounded-md border"
         }`}
       >
@@ -65,7 +65,7 @@ export default function SearchableDropdown() {
             placeholder="Search..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="border-secondary placeholder:text-secondary/75 bg-bgPrimary w-full border-b border-dashed border-opacity-45 px-6 py-3 outline-none focus:ring-0"
+            className="border-secondary placeholder:text-secondary45 bg-bgPrimary w-full border-b border-dashed border-opacity-45 px-6 py-3 outline-none focus:ring-0"
           />
 
           {/* Language List */}
@@ -78,7 +78,7 @@ export default function SearchableDropdown() {
                   setIsOpen(false);
                   setSearch("");
                 }}
-                className="hover:bg-secondary/45 flex cursor-pointer items-center px-6 py-3 text-gray-700"
+                className="hover:bg-secondary45 flex cursor-pointer items-center px-6 py-3 text-gray-700"
               >
                 <span>{language.flag}</span>
                 <div className="bg-primary mx-3 h-3 w-[1px]"></div>

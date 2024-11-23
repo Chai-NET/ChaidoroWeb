@@ -27,13 +27,13 @@ function Settings() {
         <h1 className="text-primary/45 text-xl font-light md:text-2xl">
           Currently under development
         </h1>
-        <p className="text-secondary/75 tracking-tight">
+        <p className="text-secondary45 tracking-tight">
           The <span className="lowercase">{activePage}</span> page is currently
           under development <br /> please be patient while I work on it.
           <br />
           {currentDate}.01 | © ChaiNET <br />
         </p>
-        <div className="text-secondary/15 flex select-none items-center text-5xl font-black tracking-wide md:text-7xl">
+        <div className="text-secondary45 flex select-none items-center text-5xl font-black tracking-wide md:text-7xl">
           <GiTeapot />
           <TbSteam size={35} className="text-primary/30" />
           <div className="scale-x-[-1]">
