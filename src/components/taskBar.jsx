@@ -1,12 +1,14 @@
-import useEscape from "../services/useEscape.jsx";
 // import taskPanelButtonIMG from "../img/taskPanelButton.png";
 import { useState, useEffect } from "react";
 import { Reorder } from "framer-motion";
 import { GiTeapot, GiCoffeeCup } from "react-icons/gi";
 import { TbSteam } from "react-icons/tb";
 import { CiCircleChevUp, CiSquareCheck } from "react-icons/ci";
+import "../i18n";
+import { useTranslation } from "react-i18next";
 
 export default function TaskBar() {
+  const { t } = useTranslation();
   const [task, setTask] = useState();
   const [todos, setTodos] = useState([]); //Can leave this empty
   const [isPanelOpen, setIsPanelOpen] = useState(false);
@@ -63,7 +65,7 @@ export default function TaskBar() {
         <div className="border-chocolate py-3 font-Outfit">
           <div className="my-1 flex gap-1 font-bold">
             <h2 className="text-3xl font-semibold capitalize text-chocolate">
-              to-do list
+              {t("toDoList")}
             </h2>
             <h2 className="text-sm font-semibold text-coffee">
               {todos.length}
@@ -75,10 +77,10 @@ export default function TaskBar() {
             {todos.length === 0 ? (
               <div className="relative flex select-none flex-col items-center justify-center gap-3 py-12 text-center font-Outfit">
                 <h1 className="text-xl font-light text-chocolate/45 md:text-2xl">
-                  List is empty !
+                  {t("emptyMsg")}
                 </h1>
                 <p className="tracking-tight text-coffee/75">
-                  Your to do list is empty but it is fine as long as cup is not.{" "}
+                  {t("emptyMsgDsc")}
                   <br />
                   {currentDate}.01 | © ChaiNET <br />
                 </p>
@@ -159,7 +161,7 @@ export default function TaskBar() {
                     value={task}
                     onChange={(e) => setTask(e.target.value)}
                     id="todos"
-                    placeholder="Type here add your task"
+                    placeholder={t("taskAddMsg")}
                     autoComplete="off"
                     className="peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest text-chocolate outline-none placeholder:select-none placeholder:tracking-tight placeholder:text-coffee placeholder:opacity-90 focus:ring-0"
                   />

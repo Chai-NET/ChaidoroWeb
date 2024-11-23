@@ -4,8 +4,11 @@ import { CiCircleChevUp, CiSquareCheck } from "react-icons/ci";
 import { Reorder } from "framer-motion";
 import { useState, useEffect } from "react";
 import { TbSteam } from "react-icons/tb";
+import "../i18n";
+import { useTranslation } from "react-i18next";
 
 function Tasks() {
+  const { t } = useTranslation();
   const [task, setTask] = useState();
   const [todos, setTodos] = useState([]); //Can leave this empty
 
@@ -43,11 +46,11 @@ function Tasks() {
       <div className="h-full overflow-y-scroll">
         <div className="flex flex-col gap-1 py-3 font-Outfit text-3xl font-bold text-chocolate">
           <div className="flex items-center justify-between">
-            <h2>To-Do List</h2>
+            <h2>{t("toDoList")}</h2>
             <FaSortAmountDown size={24} />
           </div>
           <h2 className="text-base font-semibold tracking-wide text-coffee">
-            Remaining tasks: {todos.length}
+            {t("remainingTasks")} {todos.length}
           </h2>
         </div>
         <ul className="text-start font-poppins">
@@ -95,7 +98,7 @@ function Tasks() {
                   value={task}
                   onChange={(e) => setTask(e.target.value)}
                   id="todos"
-                  placeholder="Type here add your task"
+                  placeholder={t("taskAddMsg")}
                   autoComplete="off"
                   className="peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest text-chocolate outline-none placeholder:tracking-tight placeholder:text-coffee placeholder:opacity-90 focus:ring-0"
                 />

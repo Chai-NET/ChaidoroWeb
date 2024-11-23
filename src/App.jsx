@@ -132,14 +132,14 @@ function Navbar() {
         <a className="flex items-center gap-2" href="/tasks">
           <FaListOl className="size-4 fill-chocolate transition-all duration-500" />
           <p className="invisible absolute text-chocolate md:visible md:relative">
-            To-Do
+            {t("todo")}
           </p>
         </a>
         <div className="h-4 w-[1px] bg-chocolate" />
         <a className="group flex items-center gap-2" href="/settings">
           <BsGearWideConnected className="size-4 fill-chocolate transition-all duration-500 group-hover:animate-spin" />
           <p className="invisible absolute text-chocolate md:visible md:relative">
-            Settings
+            {t("settings")}
           </p>
         </a>
       </div>

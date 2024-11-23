@@ -5,8 +5,11 @@ import { TbSteam } from "react-icons/tb";
 import { FaWifi } from "react-icons/fa";
 import AppSettings from "../components/appSettings.jsx";
 import ThemeSettings from "../components/themeSettings.jsx";
+import "../i18n";
+import { useTranslation } from "react-i18next";
 
 function Settings() {
+  const { t } = useTranslation();
   const [activePage, setActivePage] = useState("Profile");
 
   const today = new Date();
@@ -16,7 +19,7 @@ function Settings() {
   const currentDate = month + "/" + date + "/" + year;
 
   // Profile settings also will be on final version
-  const navigationItems = ["Application", "Themes"];
+  const navigationItems = [t("application"), t("themes")];
 
   const PageUnderDevelopment = () => {
     return (
@@ -54,9 +57,9 @@ function Settings() {
 
   const renderContent = () => {
     switch (activePage) {
-      case "Application":
+      case t("application"):
         return <AppSettings />;
-      case "Themes":
+      case t("themes"):
         return <ThemeSettings />;
       default:
         return <AppSettings />;
@@ -66,7 +69,7 @@ function Settings() {
   return (
     <div className="flex h-full w-full flex-col justify-between font-Outfit">
       <div className="my-1 mt-3 h-9 w-full font-Outfit">
-        <h3 className="text-3xl font-bold text-chocolate">Settings</h3>
+        <h3 className="text-3xl font-bold text-chocolate">{t("settings")}</h3>
       </div>
       <nav className="flex w-full gap-x-6 border-b border-chocolate px-1">
         {/* Left-aligned group of navigation buttons */}
@@ -91,7 +94,8 @@ function Settings() {
           <div className="flex items-center space-x-1 bg-chocolate p-1 px-3 text-sm font-semibold">
             <FaWifi />
             <p>
-              Network <span className="font-light tracking-wider">Version</span>
+              {t("network")}{" "}
+              <span className="font-light tracking-wider">{t("version")}</span>
             </p>
           </div>
         </div>
