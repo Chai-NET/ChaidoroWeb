@@ -7,14 +7,20 @@ export default function ThemeSettings() {
   const themes = ["chai", "black", "white"];
   const [theme, setTheme] = useState(themes[0]);
   return (
-    <div className="h-dvh overflow-auto">
+    <div className={`theme-${theme} h-dvh overflow-auto`}>
       <div className="text-primary font-Outfit">
         <div className="my-3">
           <h1 className="text-2xl font-semibold">{t("themes")}</h1>
           <p className="">{t("themesDsc")}</p>
         </div>
         <div className="my-3 flex items-center justify-between gap-3">
-          <div className="border-primary bg-secondary45 h-80 w-64 rounded-2xl border shadow shadow-blax/45"></div>
+          {themes.map((n) => (
+            <div
+              key={n}
+              onClick={() => setTheme(n)}
+              className="border-primary bg-secondary45 h-80 w-64 cursor-pointer rounded-2xl border shadow shadow-blax/45"
+            ></div>
+          ))}
         </div>
 
         {/* Divider Line */}

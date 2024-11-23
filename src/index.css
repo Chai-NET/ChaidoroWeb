@@ -28,14 +28,24 @@
   }
 }
 
+.theme-chai {
+  --color-primary: #503a3a;
+  --color-secondary: #a98282;
+  --color-secondary45: #bd9999;
+  --color-bg-primary: #e5d4d4;
+}
+
 .theme-black {
   --color-primary: #131836;
-  --color-secondary: #e0e0e0;
+  --color-secondary: #2f446b;
+  --color-secondary45: #979797;
   --color-bg-primary: #252525;
 }
 
 .theme-white {
-  --color-primary: #252525;
-  --color-secondary: #b6b6b6;
+  --color-primary: #6f7c41;
+  --color-secondary: #919e64;
+  --color-secondary45: #7cb36f;
+
   --color-bg-primary: #e3e3e3;
 }
