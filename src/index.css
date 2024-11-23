@@ -28,13 +28,13 @@
 }
 
 .theme-black {
-  --color-primary: #9acfe7;
+  --color-primary: #131836;
   --color-secondary: #e0e0e0;
-  --color-bg-primary: #0a0404;
+  --color-bg-primary: #252525;
 }
 
 .theme-white {
   --color-primary: #252525;
   --color-secondary: #b6b6b6;
-  --color-bg-primary: #e0e0e0;
+  --color-bg-primary: #e3e3e3;
 }

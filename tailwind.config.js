@@ -15,6 +15,9 @@ export default {
         // => @media (min-width: 2000px) { ... }
       },
       colors: {
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        bgPrimary: "var(--color-bg-primary)",
         blax: "#252525",
         chocolate: "#503a3a",
         coffee: "#a98282",
