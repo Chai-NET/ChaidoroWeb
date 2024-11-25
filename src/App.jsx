@@ -1,17 +1,20 @@
 import { React, useEffect, useState } from "react";
 import "./i18n";
 import { useTranslation } from "react-i18next";
-import { GiTeapot } from "react-icons/gi";
-
 import "./App.css";
+
+// Icons
+import { GiTeapot } from "react-icons/gi";
 import { BsGearWideConnected } from "react-icons/bs";
 import { FaRegClock, FaListOl } from "react-icons/fa6";
 
+// Pages
 import Error404 from "./pages/error404.jsx";
 import Pomodoro from "./pages/pomodoro.jsx";
 import Tasks from "./pages/tasks.jsx";
 import Settings from "./pages/settings.jsx";
 
+// Libraries
 import {
   BrowserRouter as Router,
   Route,
@@ -103,17 +106,17 @@ const AnimatedRoutes = () => {
 function Navbar() {
   const { t, i18n } = useTranslation();
   return (
-    <div className="border-primary bg-bgPrimary relative z-40 flex items-center justify-between border-b pb-1 font-Outfit">
+    <div className="relative z-40 flex items-center justify-between border-b border-primary bg-bgPrimary pb-1 font-Outfit">
       {/* Main Chaidoro Logo */}
       <a
         href="/"
         className="group flex w-1/2 cursor-pointer items-center gap-0 transition-all duration-300 hover:gap-2"
       >
-        <GiTeapot className="text-secondary45 block aspect-square size-8 rounded-full transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
-        <GiTeapot className="text-secondary block aspect-square size-8 rounded-full transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
-        <GiTeapot className="text-primary block aspect-square size-8 rounded-full transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-secondary45 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-secondary transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-primary transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
         <div className="invisible absolute flex justify-between pl-1 xsm:visible xsm:relative">
-          <h1 className="text-primary font-Outfit text-2xl font-semibold tracking-tight">
+          <h1 className="font-Outfit text-2xl font-semibold tracking-tight text-primary">
             {t("chaidoro")}
           </h1>
         </div>
@@ -130,15 +133,15 @@ function Navbar() {
         </a>
         <div className="h-4 w-[1px] bg-primary" /> */}
         <a className="flex items-center gap-2" href="/tasks">
-          <FaListOl className="fill-primary size-4 transition-all duration-500" />
-          <p className="text-primary invisible absolute md:visible md:relative">
+          <FaListOl className="size-4 fill-primary transition-all duration-500" />
+          <p className="invisible absolute text-primary md:visible md:relative">
             {t("todo")}
           </p>
         </a>
-        <div className="bg-primary h-4 w-[1px]" />
+        <div className="h-4 w-[1px] bg-primary" />
         <a className="group flex items-center gap-2" href="/settings">
-          <BsGearWideConnected className="fill-primary size-4 transition-all duration-500 group-hover:animate-spin" />
-          <p className="text-primary invisible absolute md:visible md:relative">
+          <BsGearWideConnected className="size-4 fill-primary transition-all duration-500 group-hover:animate-spin" />
+          <p className="invisible absolute text-primary md:visible md:relative">
             {t("settings")}
           </p>
         </a>
@@ -170,7 +173,7 @@ function App() {
   console.log("Current language:", i18n.language);
   return (
     <Router>
-      <div className="selection:bg-primary bg-bgPrimary selection:text-bgPrimary">
+      <div className="bg-bgPrimary selection:bg-primary selection:text-bgPrimary">
         <div className="relative mx-auto h-dvh overflow-clip p-3 px-6 sm:w-5/6 md:w-4/5 lg:w-3/5 2xl:w-1/2">
           <Navbar />
           <div className="mt-3 h-full">

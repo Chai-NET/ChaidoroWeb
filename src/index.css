@@ -28,6 +28,10 @@
   }
 }
 
+* {
+  @apply transition-colors duration-1000 ease-in-out;
+}
+
 .theme-chai {
   --color-primary: #503a3a;
   --color-secondary: #a98282;
