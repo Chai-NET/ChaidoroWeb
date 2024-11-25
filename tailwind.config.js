@@ -18,6 +18,7 @@ export default {
         primary: "var(--color-primary)",
         secondary: "var(--color-secondary)",
         secondary45: "var(--color-secondary45)",
+        text: "var(--color-text)",
         bgPrimary: "var(--color-bg-primary)",
         blax: "#252525",
         chocolate: "#503a3a",
