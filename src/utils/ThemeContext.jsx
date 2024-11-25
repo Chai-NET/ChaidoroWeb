@@ -1,27 +1,25 @@
-import { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useState, useEffect } from "react";
 
-// Create the ThemeContext
 const ThemeContext = createContext();
 
-// ThemeProvider Component
-export function ThemeProvider({ children }) {
-  const themes = ["chai", "black", "white"];
-  const [theme, setTheme] = useState(themes[0]);
+export const ThemeProvider = ({ children }) => {
+  const themes = ["chai", "white", "black"];
+  const [theme, setTheme] = useState(() => {
+    return localStorage.getItem("app-theme") || "white";
+  });
+
+  useEffect(() => {
+    // Save the theme to localStorage whenever it changes
+    localStorage.setItem("app-theme", theme);
+    // Optionally, add theme as a class to the body for global styling
+    document.body.className = `theme-${theme}`;
+  }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
+    <ThemeContext.Provider value={{ theme, themes, setTheme }}>
       {children}
     </ThemeContext.Provider>
   );
-}
+};
 
-// Custom Hook to Use ThemeContext
-export function useTheme() {
-  const context = useContext(ThemeContext);
-
-  if (!context) {
-    throw new Error("useTheme must be used within a ThemeProvider");
-  }
-
-  return context;
-}
+export const useTheme = () => useContext(ThemeContext);

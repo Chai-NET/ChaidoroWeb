@@ -29,27 +29,29 @@
 }
 
 * {
-  @apply transition-colors duration-1000 ease-in-out;
+  @apply transition-colors duration-500 ease-in-out;
 }
 
 .theme-chai {
   --color-primary: #503a3a;
   --color-secondary: #a98282;
   --color-secondary45: #bd9999;
+  --color-text: #cfcfcf;
   --color-bg-primary: #e5d4d4;
 }
 
-.theme-black {
-  --color-primary: #131836;
-  --color-secondary: #2f446b;
-  --color-secondary45: #979797;
-  --color-bg-primary: #252525;
+.theme-white {
+  --color-primary: #3e3e3e;
+  --color-secondary: #a1a5a5;
+  --color-secondary45: #cccece;
+  --color-text: #cfcfcf;
+  --color-bg-primary: #ffffff;
 }
 
-.theme-white {
-  --color-primary: #6f7c41;
-  --color-secondary: #919e64;
-  --color-secondary45: #7cb36f;
-
-  --color-bg-primary: #e3e3e3;
+.theme-black {
+  --color-primary: #cfcfcf;
+  --color-secondary: #66558b;
+  --color-secondary45: #877f99;
+  --color-text: #cfcfcf;
+  --color-bg-primary: #212121;
 }

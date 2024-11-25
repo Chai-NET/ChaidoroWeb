@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 
 export default function ThemeSettings() {
   const { t } = useTranslation();
-  const { theme, setTheme, themes } = useTheme(); // Access theme from context
+  const { theme, themes, setTheme } = useTheme(); // Access theme from context
 
   return (
     <div className={`theme-${theme} h-dvh overflow-auto`}>
