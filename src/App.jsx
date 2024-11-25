@@ -163,9 +163,9 @@ function App() {
   const { t, i18n } = useTranslation();
   const { theme } = useTheme();
 
-  // Slower version (defaults to english but then auto changes to local storage value)
   const [selectedLanguage, setSelectedLanguage] = useState(() => {
     const savedLanguage = localStorage.getItem("selectedLanguage");
+    console.log("Saved language: ", savedLanguage);
     return (
       (savedLanguage && JSON.parse(savedLanguage)) || {
         name: "English",
@@ -180,6 +180,7 @@ function App() {
     console.log(selectedLanguage.code);
     localStorage.setItem("selectedLanguage", JSON.stringify(selectedLanguage));
   }, [selectedLanguage, i18n]);
+
   console.log("Current language:", i18n.language);
   return (
     <Router>
