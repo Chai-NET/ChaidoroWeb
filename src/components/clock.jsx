@@ -3,7 +3,12 @@ import { useEffect } from "react";
 import "../i18n";
 import { useTranslation } from "react-i18next";
 
+// Utilities
+import { useTheme } from "../utils/ThemeContext.jsx";
+
 function Clock() {
+  const { theme } = useTheme();
+
   const { t } = useTranslation();
   const today = new Date();
   const month = today.getMonth();
@@ -23,8 +28,8 @@ function Clock() {
   // }, []);
   return (
     <>
-      <div className="flex items-center justify-center">
-        <div className="bg-primary text-bgPrimary w-full py-32 text-center font-AlbertSans">
+      <div className={`theme-${theme} flex items-center justify-center`}>
+        <div className="w-full bg-primary py-32 text-center font-AlbertSans text-bgPrimary">
           <p className="font-RobotoCondensed text-xs font-light proportional-nums tracking-widest">
             {t("clockMessage")}
           </p>

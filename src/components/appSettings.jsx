@@ -1,12 +1,16 @@
 import LanguageSelector from "./languageSelector.jsx";
 import "../i18n";
 import { useTranslation } from "react-i18next";
+import { useTheme } from "../utils/ThemeContext.jsx";
 
 export default function AppSettings() {
   const { t } = useTranslation();
+  const { theme } = useTheme();
   return (
     <>
-      <div className="h-dvh overflow-auto pb-64 font-Outfit text-primary">
+      <div
+        className={`theme-${theme} h-dvh overflow-auto pb-64 font-Outfit text-primary`}
+      >
         {/* Clock Settings */}
         <div>
           <div className="my-3">

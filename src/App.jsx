@@ -8,6 +8,9 @@ import { GiTeapot } from "react-icons/gi";
 import { BsGearWideConnected } from "react-icons/bs";
 import { FaRegClock, FaListOl } from "react-icons/fa6";
 
+// Utilities
+import { ThemeProvider, useTheme } from "./utils/ThemeContext.jsx";
+
 // Pages
 import Error404 from "./pages/error404.jsx";
 import Pomodoro from "./pages/pomodoro.jsx";
@@ -30,6 +33,7 @@ const pageTransition = {
 };
 const AnimatedRoutes = () => {
   const location = useLocation();
+  const { theme } = useTheme();
 
   return (
     <AnimatePresence mode="wait">
@@ -105,8 +109,11 @@ const AnimatedRoutes = () => {
 
 function Navbar() {
   const { t, i18n } = useTranslation();
+  const { theme } = useTheme();
   return (
-    <div className="relative z-40 flex items-center justify-between border-b border-primary bg-bgPrimary pb-1 font-Outfit">
+    <div
+      className={`theme-${theme} relative z-40 flex items-center justify-between border-b border-primary bg-bgPrimary pb-1 font-Outfit`}
+    >
       {/* Main Chaidoro Logo */}
       <a
         href="/"
@@ -124,7 +131,9 @@ function Navbar() {
 
       {/* Navigation: */}
 
-      <div className="text-md flex items-center justify-end space-x-3 rounded-md font-medium capitalize">
+      <div
+        className={`theme-${theme} text-md flex items-center justify-end space-x-3 rounded-md font-medium capitalize`}
+      >
         {/* <a className="group flex items-center gap-2" href="/">
           <FaRegClock className="size-4 fill-primary transition-all duration-500 group-hover:animate-spin-slow" />
           <p className="invisible absolute text-primary md:visible md:relative">
@@ -152,6 +161,7 @@ function Navbar() {
 
 function App() {
   const { t, i18n } = useTranslation();
+  const { theme } = useTheme();
 
   // Slower version (defaults to english but then auto changes to local storage value)
   const [selectedLanguage, setSelectedLanguage] = useState(() => {
@@ -173,7 +183,9 @@ function App() {
   console.log("Current language:", i18n.language);
   return (
     <Router>
-      <div className="bg-bgPrimary selection:bg-primary selection:text-bgPrimary">
+      <div
+        className={`theme-${theme} bg-bgPrimary selection:bg-primary selection:text-bgPrimary`}
+      >
         <div className="relative mx-auto h-dvh overflow-clip p-3 px-6 sm:w-5/6 md:w-4/5 lg:w-3/5 2xl:w-1/2">
           <Navbar />
           <div className="mt-3 h-full">
