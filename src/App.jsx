@@ -24,7 +24,7 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "motion/react";
 
 const pageTransition = {
   initial: { opacity: 0, y: -55 },

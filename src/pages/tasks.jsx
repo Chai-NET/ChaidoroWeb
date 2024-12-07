@@ -1,7 +1,7 @@
 import "../customCSS/noScroll.css"; //Custom CSS that removes Scroll bar of the element
 import { FaSortAmountDown } from "react-icons/fa";
 import { CiCircleChevUp, CiSquareCheck } from "react-icons/ci";
-import { Reorder } from "framer-motion";
+import { Reorder } from "motion/react";
 import { useState, useEffect } from "react";
 import { TbSteam } from "react-icons/tb";
 import "../i18n";
@@ -44,12 +44,12 @@ function Tasks() {
   return (
     <>
       <div className="h-full overflow-y-scroll">
-        <div className="text-primary flex flex-col gap-1 py-3 font-Outfit text-3xl font-bold">
+        <div className="flex flex-col gap-1 py-3 font-Outfit text-3xl font-bold text-primary">
           <div className="flex items-center justify-between">
             <h2>{t("toDoList")}</h2>
             <FaSortAmountDown size={24} />
           </div>
-          <h2 className="text-secondary text-base font-semibold tracking-wide">
+          <h2 className="text-base font-semibold tracking-wide text-secondary">
             {t("remainingTasks")} {todos.length}
           </h2>
         </div>
@@ -64,17 +64,17 @@ function Tasks() {
                         className="peer aspect-square"
                         onClick={() => handleRemoveTodo(index)}
                       >
-                        <CiSquareCheck className="fill-primary size-6 hover:fill-emerald-700" />
+                        <CiSquareCheck className="size-6 fill-primary hover:fill-emerald-700" />
                       </button>
                       {/* Task Name */}
-                      <div className="text-primary hover:text-secondary line-clamp-1 whitespace-nowrap font-Outfit transition-all duration-500 hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide active:cursor-grabbing group-hover:text-emerald-600 peer-hover:text-emerald-600">
+                      <div className="line-clamp-1 whitespace-nowrap font-Outfit text-primary transition-all duration-500 hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-secondary active:cursor-grabbing group-hover:text-emerald-600 peer-hover:text-emerald-600">
                         {todo}
                       </div>
                     </div>
                     {/* Line betweeen */}
-                    <hr className="border-secondary w-full" />
+                    <hr className="w-full border-secondary" />
                     {/* Index on the list */}
-                    <div className="item-end text-secondary flex justify-end text-xs font-semibold peer-has-[:checked]:hidden">
+                    <div className="item-end flex justify-end text-xs font-semibold text-secondary peer-has-[:checked]:hidden">
                       {index + 1}
                     </div>
                   </div>
@@ -86,9 +86,9 @@ function Tasks() {
 
         {/* Task Input Field */}
         <div className="my-3 w-full">
-          <div className="border-secondary bg-bgPrimary border-t">
+          <div className="border-t border-secondary bg-bgPrimary">
             <div className="flex flex-row justify-between">
-              <div className="text-secondary flex flex-grow items-center gap-x-1">
+              <div className="flex flex-grow items-center gap-x-1 text-secondary">
                 <TbSteam />
 
                 <input
@@ -100,7 +100,7 @@ function Tasks() {
                   id="todos"
                   placeholder={t("taskAddMsg")}
                   autoComplete="off"
-                  className="text-primary placeholder:text-secondary peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest outline-none placeholder:tracking-tight placeholder:opacity-90 focus:ring-0"
+                  className="peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest text-primary outline-none placeholder:tracking-tight placeholder:text-secondary placeholder:opacity-90 focus:ring-0"
                 />
               </div>
             </div>

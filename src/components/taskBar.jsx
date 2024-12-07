@@ -1,6 +1,6 @@
 // import taskPanelButtonIMG from "../img/taskPanelButton.png";
 import { useState, useEffect } from "react";
-import { Reorder } from "framer-motion";
+import { Reorder } from "motion/react";
 import { GiTeapot, GiCoffeeCup } from "react-icons/gi";
 import { TbSteam } from "react-icons/tb";
 import { CiCircleChevUp, CiSquareCheck } from "react-icons/ci";
@@ -64,10 +64,10 @@ export default function TaskBar() {
       <div className="h-full overflow-y-scroll pb-9">
         <div className="border-primary py-3 font-Outfit">
           <div className="my-1 flex gap-1 font-bold">
-            <h2 className="text-primary text-3xl font-semibold capitalize">
+            <h2 className="text-3xl font-semibold capitalize text-primary">
               {t("toDoList")}
             </h2>
-            <h2 className="text-secondary text-sm font-semibold">
+            <h2 className="text-sm font-semibold text-secondary">
               {todos.length}
             </h2>
           </div>
@@ -79,12 +79,12 @@ export default function TaskBar() {
                 <h1 className="text-primary/45 text-xl font-light md:text-2xl">
                   {t("emptyMsg")}
                 </h1>
-                <p className="text-secondary45 tracking-tight">
+                <p className="tracking-tight text-secondary45">
                   {t("emptyMsgDsc")}
                   <br />
                   {currentDate}.01 | © ChaiNET <br />
                 </p>
-                <div className="text-secondary45 flex select-none items-center text-5xl font-black tracking-wide md:text-7xl">
+                <div className="flex select-none items-center text-5xl font-black tracking-wide text-secondary45 md:text-7xl">
                   <GiTeapot />
                   <TbSteam size={35} className="text-primary/30" />
                   <div className="scale-x-[-1]">
@@ -103,17 +103,17 @@ export default function TaskBar() {
                             className="peer aspect-square"
                             onClick={() => handleRemoveTodo(index)}
                           >
-                            <CiSquareCheck className="fill-primary size-5 hover:fill-emerald-700" />
+                            <CiSquareCheck className="size-5 fill-primary hover:fill-emerald-700" />
                           </button>
                           {/* Task Name */}
-                          <div className="text-primary hover:text-secondary line-clamp-1 whitespace-nowrap font-Outfit transition-all duration-500 hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide active:cursor-grabbing group-hover:text-emerald-600 peer-hover:text-emerald-600">
+                          <div className="line-clamp-1 whitespace-nowrap font-Outfit text-primary transition-all duration-500 hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-secondary active:cursor-grabbing group-hover:text-emerald-600 peer-hover:text-emerald-600">
                             {todo}
                           </div>
                         </div>
                         {/* Line betweeen */}
-                        <hr className="border-secondary w-full" />
+                        <hr className="w-full border-secondary" />
                         {/* Index on the list */}
-                        <div className="item-end text-secondary flex justify-end text-xs font-semibold peer-has-[:checked]:hidden">
+                        <div className="item-end flex justify-end text-xs font-semibold text-secondary peer-has-[:checked]:hidden">
                           {index + 1}
                         </div>
                       </div>
@@ -147,12 +147,12 @@ export default function TaskBar() {
           </div> */}
           {/* Task Input Field Absolute */}
           <div className="absolute bottom-0 left-1/2 w-full -translate-x-1/2 pb-9">
-            <div className="border-secondary bg-bgPrimary z-10 border-t border-dashed pb-3">
+            <div className="z-10 border-t border-dashed border-secondary bg-bgPrimary pb-3">
               <div className="flex flex-row justify-between">
-                <div className="text-secondary flex flex-grow items-center gap-x-1">
+                <div className="flex flex-grow items-center gap-x-1 text-secondary">
                   <CiCircleChevUp
                     onClick={addTask}
-                    className="hover:fill-primary size-5 cursor-pointer transition-all duration-300"
+                    className="size-5 cursor-pointer transition-all duration-300 hover:fill-primary"
                   />
                   <input
                     onKeyDown={handleKeyPress}
@@ -163,7 +163,7 @@ export default function TaskBar() {
                     id="todos"
                     placeholder={t("taskAddMsg")}
                     autoComplete="off"
-                    className="text-primary placeholder:text-secondary peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest outline-none placeholder:select-none placeholder:tracking-tight placeholder:opacity-90 focus:ring-0"
+                    className="peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest text-primary outline-none placeholder:select-none placeholder:tracking-tight placeholder:text-secondary placeholder:opacity-90 focus:ring-0"
                   />
                 </div>
               </div>
