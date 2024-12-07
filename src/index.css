@@ -21,10 +21,10 @@
 
 @layer base {
   :root {
-    --color-primary: #503a3a;
-    --color-secondary: #a98282;
-    --color-secondary45: #bd9999;
-    --color-bg-primary: #e5d4d4;
+    --color-darkest: #503a3a;
+    --color-darker: #a98282;
+    --color-dark: #bd9999;
+    --color-bg: #e5d4d4;
   }
 }
 
@@ -33,25 +33,28 @@
 }
 
 .theme-chai {
-  --color-primary: #503a3a;
-  --color-secondary: #a98282;
-  --color-secondary45: #bd9999;
+  --color-darkest: #503a3a;
+  --color-darker: #a98282;
+  --color-dark: #bd9999;
   --color-text: #e5d4d4;
-  --color-bg-primary: #e5d4d4;
+  --color-bg: #e5d4d4;
+  --color--accent: #abcaeb;
 }
 
 .theme-white {
-  --color-primary: #3e3e3e;
-  --color-secondary: #a1a5a5;
-  --color-secondary45: #cccece;
-  --color-text: #3e3e3e;
-  --color-bg-primary: #ffffff;
+  --color-darkest: #3e3e3e;
+  --color-darker: #a1a5a5;
+  --color-dark: #cccece;
+  --color-text: #f5f5f5;
+  --color-bg: #f5f5f5;
+  --color--accent: #abcaeb;
 }
 
 .theme-black {
-  --color-primary: #66558b;
-  --color-secondary: #877f99;
-  --color-secondary45: #cfcfcf;
+  --color-darkest: #66558b;
+  --color-darker: #877f99;
+  --color-dark: #cfcfcf;
   --color-text: #cfcfcf;
-  --color-bg-primary: #212121;
+  --color-bg: #212121;
+  --color--accent: #abcaeb;
 }

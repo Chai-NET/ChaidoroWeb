@@ -15,11 +15,12 @@ export default {
         // => @media (min-width: 2000px) { ... }
       },
       colors: {
-        primary: "var(--color-primary)",
-        secondary: "var(--color-secondary)",
-        secondary45: "var(--color-secondary45)",
+        primary: "var(--color-darkest)",
+        secondary: "var(--color-darker)",
+        secondary45: "var(--color-dark)",
         text: "var(--color-text)",
-        bgPrimary: "var(--color-bg-primary)",
+        bgPrimary: "var(--color-bg)",
+        accent: "var(--color-accent)",
         blax: "#252525",
         chocolate: "#503a3a",
         coffee: "#a98282",

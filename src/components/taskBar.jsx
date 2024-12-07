@@ -4,6 +4,8 @@ import { Reorder } from "motion/react";
 import { GiTeapot, GiCoffeeCup } from "react-icons/gi";
 import { TbSteam } from "react-icons/tb";
 import { CiCircleChevUp, CiSquareCheck } from "react-icons/ci";
+import { FaCheck, FaSortAmountDown } from "react-icons/fa";
+
 import "../i18n";
 import { useTranslation } from "react-i18next";
 
@@ -72,46 +74,47 @@ export default function TaskBar() {
             </h2>
           </div>
 
-          <ul className="text-start font-poppins">
-            {/* Empty List Message: */}
-            {todos.length === 0 ? (
-              <div className="relative flex select-none flex-col items-center justify-center gap-3 py-12 text-center font-Outfit">
-                <h1 className="text-primary/45 text-xl font-light md:text-2xl">
-                  {t("emptyMsg")}
-                </h1>
-                <p className="tracking-tight text-secondary45">
-                  {t("emptyMsgDsc")}
-                  <br />
-                  {currentDate}.01 | © ChaiNET <br />
-                </p>
-                <div className="flex select-none items-center text-5xl font-black tracking-wide text-secondary45 md:text-7xl">
+          {/* Empty List Message: */}
+          {todos.length === 0 ? (
+            <div className="relative flex select-none flex-col items-center justify-center gap-3 py-12 text-center font-Outfit">
+              <h1 className="text-primary/45 text-xl font-light md:text-2xl">
+                {t("emptyMsg")}
+              </h1>
+              <p className="tracking-tight text-secondary45">
+                {t("emptyMsgDsc")}
+                <br />
+                {currentDate}.01 | © ChaiNET <br />
+              </p>
+              <div className="flex select-none items-center text-5xl font-black tracking-wide text-secondary45 md:text-7xl">
+                <GiTeapot />
+                <TbSteam size={35} className="text-primary/30" />
+                <div className="scale-x-[-1]">
                   <GiTeapot />
-                  <TbSteam size={35} className="text-primary/30" />
-                  <div className="scale-x-[-1]">
-                    <GiTeapot />
-                  </div>
                 </div>
               </div>
-            ) : (
+            </div>
+          ) : (
+            <ul className="my-6 text-start font-poppins">
               <Reorder.Group values={todos} onReorder={setTodos}>
                 {todos.map((todo, index) => (
                   <Reorder.Item value={todo} key={todo}>
                     <li key={index}>
-                      <div className="my-3 flex flex-row items-center gap-3 hover:cursor-grab active:cursor-grabbing">
-                        <div className="flex gap-1">
+                      {/* Individual task */}
+                      <div className="my-2 flex flex-row items-center justify-between gap-3 rounded-lg border-b border-secondary bg-white p-3 pr-6 hover:cursor-grab active:cursor-grabbing">
+                        <div className="flex items-center gap-3">
                           <button
-                            className="peer aspect-square"
+                            className="group peer aspect-square rounded-lg border border-secondary p-1 transition-all duration-300 ease-in-out hover:bg-primary"
                             onClick={() => handleRemoveTodo(index)}
                           >
-                            <CiSquareCheck className="size-5 fill-primary hover:fill-emerald-700" />
+                            <FaCheck className="size-3 fill-primary opacity-0 transition-all duration-100 ease-in-out group-hover:fill-white group-hover:opacity-100" />
                           </button>
                           {/* Task Name */}
-                          <div className="line-clamp-1 whitespace-nowrap font-Outfit text-primary transition-all duration-500 hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-secondary active:cursor-grabbing group-hover:text-emerald-600 peer-hover:text-emerald-600">
+                          <div className="line-clamp-1 whitespace-nowrap font-Outfit text-primary transition-all duration-500 first-letter:uppercase hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-secondary active:cursor-grabbing group-hover:text-emerald-600 peer-hover:font-bold peer-hover:tracking-wider">
                             {todo}
                           </div>
                         </div>
                         {/* Line betweeen */}
-                        <hr className="w-full border-secondary" />
+                        {/* <hr className="w-full border-secondary" /> */}
                         {/* Index on the list */}
                         <div className="item-end flex justify-end text-xs font-semibold text-secondary peer-has-[:checked]:hidden">
                           {index + 1}
@@ -121,8 +124,8 @@ export default function TaskBar() {
                   </Reorder.Item>
                 ))}
               </Reorder.Group>
-            )}
-          </ul>
+            </ul>
+          )}
 
           {/* Task Input Field */}
           {/* <div className="w-full">

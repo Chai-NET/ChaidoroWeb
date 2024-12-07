@@ -2,11 +2,13 @@ import { React, useEffect, useState } from "react";
 import "./i18n";
 import { useTranslation } from "react-i18next";
 import "./App.css";
+import { AnimatePresence, motion } from "motion/react";
 
 // Icons
 import { GiTeapot } from "react-icons/gi";
 import { BsGearWideConnected } from "react-icons/bs";
 import { FaRegClock, FaListOl } from "react-icons/fa6";
+import { FaCheckDouble } from "react-icons/fa";
 
 // Utilities
 import { ThemeProvider, useTheme } from "./utils/ThemeContext.jsx";
@@ -24,7 +26,6 @@ import {
   Routes,
   useLocation,
 } from "react-router-dom";
-import { AnimatePresence, motion } from "motion/react";
 
 const pageTransition = {
   initial: { opacity: 0, y: -55 },
@@ -142,7 +143,7 @@ function Navbar() {
         </a>
         <div className="h-4 w-[1px] bg-primary" /> */}
         <a className="flex items-center gap-2" href="/tasks">
-          <FaListOl className="size-4 fill-primary transition-all duration-500" />
+          <FaCheckDouble className="size-4 fill-primary transition-all duration-500" />
           <p className="invisible absolute text-primary md:visible md:relative">
             {t("todo")}
           </p>
