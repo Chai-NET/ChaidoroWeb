@@ -25,6 +25,7 @@
     --color-darker: #a98282;
     --color-dark: #bd9999;
     --color-bg: #e5d4d4;
+    --color-accentColor: #abcaeb;
   }
 }
 
@@ -38,16 +39,16 @@
   --color-dark: #bd9999;
   --color-text: #e5d4d4;
   --color-bg: #e5d4d4;
-  --color--accent: #abcaeb;
+  --color-accentColor: #abcaeb;
 }
 
 .theme-white {
-  --color-darkest: #3e3e3e;
+  --color-darkest: #252525;
   --color-darker: #a1a5a5;
   --color-dark: #cccece;
   --color-text: #f5f5f5;
-  --color-bg: #f5f5f5;
-  --color--accent: #abcaeb;
+  --color-bg: #ffffff;
+  --color-accentColor: #abcaeb;
 }
 
 .theme-black {
@@ -56,5 +57,5 @@
   --color-dark: #cfcfcf;
   --color-text: #cfcfcf;
   --color-bg: #212121;
-  --color--accent: #abcaeb;
+  --color-accentColor: #abcaeb;
 }

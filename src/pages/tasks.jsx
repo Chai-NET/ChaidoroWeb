@@ -56,13 +56,13 @@ function Tasks() {
           </h2>
         </div>
         {/* To-do List */}
-        <ul className="my-6 text-start font-poppins">
+        <ul className="my-6 pb-12 text-start font-poppins">
           <Reorder.Group values={todos} onReorder={setTodos}>
             {todos.map((todo, index) => (
               <Reorder.Item value={todo} key={todo}>
                 <li key={index}>
                   {/* Individual task */}
-                  <div className="my-2 flex flex-row items-center justify-between gap-3 rounded-lg border-b border-secondary bg-white p-2 pr-6 hover:cursor-grab active:cursor-grabbing">
+                  <div className="my-2 flex flex-row items-center justify-between gap-3 rounded-lg border-b border-secondary bg-neutral-100 p-2 pr-6 hover:cursor-grab active:cursor-grabbing">
                     <div className="flex items-center gap-3">
                       <button
                         className="group peer aspect-square rounded-lg border border-secondary p-1 transition-all duration-300 ease-in-out hover:bg-primary"
@@ -89,7 +89,7 @@ function Tasks() {
         </ul>
 
         {/* Task Input Field */}
-        <div className="my-3 w-full">
+        <div className="my-3 w-full pb-9">
           <div className="border-t border-secondary bg-bgPrimary">
             <div className="flex flex-row justify-between">
               <div className="flex flex-grow items-center gap-x-1 text-secondary">

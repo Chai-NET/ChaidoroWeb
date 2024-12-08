@@ -20,7 +20,7 @@ export default {
         secondary45: "var(--color-dark)",
         text: "var(--color-text)",
         bgPrimary: "var(--color-bg)",
-        accent: "var(--color-accent)",
+        accent: "var(--color-accentColor)",
         blax: "#252525",
         chocolate: "#503a3a",
         coffee: "#a98282",

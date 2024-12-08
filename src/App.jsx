@@ -32,6 +32,7 @@ const pageTransition = {
   animate: { opacity: 1, y: 0 },
   exit: { opacity: 0, y: 55 },
 };
+
 const AnimatedRoutes = () => {
   const location = useLocation();
   const { theme } = useTheme();
@@ -120,6 +121,7 @@ function Navbar() {
         href="/"
         className="group flex w-1/2 cursor-pointer items-center gap-0 transition-all duration-300 hover:gap-2"
       >
+        {/* Three Chainiks */}
         <GiTeapot className="block aspect-square size-8 rounded-full text-secondary45 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
         <GiTeapot className="block aspect-square size-8 rounded-full text-secondary transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
         <GiTeapot className="block aspect-square size-8 rounded-full text-primary transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
@@ -135,13 +137,6 @@ function Navbar() {
       <div
         className={`theme-${theme} text-md flex items-center justify-end space-x-3 rounded-md font-medium capitalize`}
       >
-        {/* <a className="group flex items-center gap-2" href="/">
-          <FaRegClock className="size-4 fill-primary transition-all duration-500 group-hover:animate-spin-slow" />
-          <p className="invisible absolute text-primary md:visible md:relative">
-            Clock
-          </p>
-        </a>
-        <div className="h-4 w-[1px] bg-primary" /> */}
         <a className="flex items-center gap-2" href="/tasks">
           <FaCheckDouble className="size-4 fill-primary transition-all duration-500" />
           <p className="invisible absolute text-primary md:visible md:relative">
