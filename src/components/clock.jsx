@@ -22,7 +22,7 @@ function Clock() {
   return (
     <>
       <div className={`theme-${theme} flex items-center justify-center`}>
-        <div className="relative w-full rounded-2xl border border-b-2 border-blax bg-accent py-24 text-center font-AlbertSans text-blax shadow-sm shadow-blax">
+        <div className="relative w-full rounded-xl border border-b-2 border-blax bg-accent py-24 text-center font-AlbertSans text-blax shadow-sm shadow-blax">
           <p className="font-RobotoCondensed text-xs font-light proportional-nums tracking-widest">
             {t("clockMessage")}
           </p>

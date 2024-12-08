@@ -100,7 +100,7 @@ export default function TaskBar() {
                   <Reorder.Item value={todo} key={todo}>
                     <li key={index}>
                       {/* Individual task */}
-                      <div className="my-2 flex flex-row items-center justify-between gap-3 rounded-lg border border-blax bg-neutral-50 p-3 pr-6 shadow-sm shadow-neutral-500 hover:cursor-grab active:cursor-grabbing">
+                      <div className="m-3 my-5 flex flex-row items-center justify-between gap-3 rounded-lg border-blax bg-neutral-50 p-3 pr-6 shadow-sm shadow-neutral-500 hover:cursor-grab active:cursor-grabbing">
                         <div className="flex items-center gap-3">
                           <button
                             className="group peer aspect-square rounded-full border border-emerald-600 border-secondary p-1 transition-all duration-300 ease-in-out hover:bg-emerald-600"
