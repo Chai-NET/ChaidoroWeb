@@ -114,7 +114,7 @@ function Navbar() {
   const { theme } = useTheme();
   return (
     <div
-      className={`theme-${theme} relative z-40 flex items-center justify-between border-b border-primary bg-bgPrimary pb-1 font-Outfit`}
+      className={`theme-${theme} relative z-40 flex items-center justify-between border-primary bg-bgPrimary font-Outfit`}
     >
       {/* Main Chaidoro Logo */}
       <a
@@ -122,9 +122,9 @@ function Navbar() {
         className="group flex w-1/2 cursor-pointer items-center gap-0 transition-all duration-300 hover:gap-2"
       >
         {/* Three Chainiks */}
-        <GiTeapot className="block aspect-square size-8 rounded-full text-secondary45 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
-        <GiTeapot className="block aspect-square size-8 rounded-full text-secondary transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
-        <GiTeapot className="block aspect-square size-8 rounded-full text-primary transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-blax opacity-35 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-blax opacity-55 transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-blax transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
         <div className="invisible absolute flex justify-between pl-1 xsm:visible xsm:relative">
           <h1 className="font-Outfit text-2xl font-semibold tracking-tight text-primary">
             {t("chaidoro")}

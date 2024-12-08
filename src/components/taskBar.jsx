@@ -100,16 +100,16 @@ export default function TaskBar() {
                   <Reorder.Item value={todo} key={todo}>
                     <li key={index}>
                       {/* Individual task */}
-                      <div className="my-2 flex flex-row items-center justify-between gap-3 rounded-lg border border-blax border-secondary bg-neutral-50 p-3 pr-6 shadow-sm shadow-blax hover:cursor-grab active:cursor-grabbing">
+                      <div className="my-2 flex flex-row items-center justify-between gap-3 rounded-lg border border-blax bg-neutral-50 p-3 pr-6 shadow-sm shadow-neutral-500 hover:cursor-grab active:cursor-grabbing">
                         <div className="flex items-center gap-3">
                           <button
-                            className="group peer aspect-square rounded-lg border border-secondary p-1 transition-all duration-300 ease-in-out hover:bg-primary"
+                            className="group peer aspect-square rounded-full border border-emerald-600 border-secondary p-1 transition-all duration-300 ease-in-out hover:bg-emerald-600"
                             onClick={() => handleRemoveTodo(index)}
                           >
-                            <FaCheck className="size-3 fill-primary opacity-0 transition-all duration-100 ease-in-out group-hover:fill-white group-hover:opacity-100" />
+                            <FaCheck className="size-3 fill-emerald-300 opacity-0 transition-all duration-100 ease-in-out group-hover:fill-white group-hover:opacity-100" />
                           </button>
                           {/* Task Name */}
-                          <div className="line-clamp-1 whitespace-nowrap font-Outfit text-primary transition-all duration-500 first-letter:uppercase hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-secondary active:cursor-grabbing group-hover:text-emerald-600 peer-hover:font-bold peer-hover:tracking-wider">
+                          <div className="line-clamp-1 whitespace-nowrap font-Outfit text-lg font-medium text-primary transition-all duration-500 first-letter:uppercase hover:line-clamp-3 hover:cursor-grab hover:font-semibold hover:tracking-wide hover:text-secondary active:cursor-grabbing group-hover:text-emerald-600 peer-hover:font-bold peer-hover:tracking-wider">
                             {todo}
                           </div>
                         </div>

@@ -39,7 +39,7 @@
   --color-dark: #bd9999;
   --color-text: #e5d4d4;
   --color-bg: #e5d4d4;
-  --color-accentColor: #abcaeb;
+  --color-accentColor: #503a3a;
 }
 
 .theme-white {
@@ -57,5 +57,5 @@
   --color-dark: #cfcfcf;
   --color-text: #cfcfcf;
   --color-bg: #212121;
-  --color-accentColor: #abcaeb;
+  --color-accentColor: #66558b;
 }
