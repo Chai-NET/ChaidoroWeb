@@ -160,7 +160,7 @@ export default function TaskBar() {
                   <input
                     onKeyDown={handleKeyPress}
                     type="text"
-                    maxLength={90}
+                    maxLength={70}
                     value={task}
                     onChange={(e) => setTask(e.target.value)}
                     id="todos"
