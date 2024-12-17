@@ -96,9 +96,13 @@ function Tasks() {
                     <li key={index}>
                       {/* Individual task */}
                       <motion.div
-                        initial={{ scale: 0.7, opacity: 0 }}
-                        animate={{ scale: 1, opacity: 1 }}
-                        exit={{ scale: 0.7, opacity: 0 }}
+                        initial={{
+                          scale: 0.7,
+                          opacity: 0,
+                          filter: "blur(10px)",
+                        }}
+                        animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+                        exit={{ scale: 0.7, opacity: 0, filter: "blur(10px)" }}
                         className="m-3 my-5 flex flex-row items-center justify-between gap-3 rounded-lg border-blax bg-neutral-50 p-3 pr-6 shadow-sm shadow-neutral-500 hover:cursor-grab active:cursor-grabbing"
                       >
                         <div className="flex items-center gap-3">
