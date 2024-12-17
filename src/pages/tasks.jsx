@@ -13,6 +13,7 @@ import { GiTeapot, GiCoffeeCup } from "react-icons/gi";
 import { CiCircleChevUp, CiSquareCheck } from "react-icons/ci";
 import "../i18n";
 import { useTranslation } from "react-i18next";
+import { delay } from "motion";
 
 function Tasks() {
   const today = new Date();
@@ -101,7 +102,16 @@ function Tasks() {
                           opacity: 0,
                           filter: "blur(10px)",
                         }}
-                        animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
+                        animate={{
+                          scale: 1,
+                          opacity: 1,
+                          filter: "blur(0px)",
+                        }}
+                        // transition={{
+                        //   duration: 0.3,
+                        //   delay: index / 20,
+                        //   ease: "easeInOut",
+                        // }}
                         exit={{ scale: 0.7, opacity: 0, filter: "blur(10px)" }}
                         className="m-3 my-5 flex flex-row items-center justify-between gap-3 rounded-lg border-blax bg-neutral-50 p-3 pr-6 shadow-sm shadow-neutral-500 hover:cursor-grab active:cursor-grabbing"
                       >
