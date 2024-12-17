@@ -19,7 +19,7 @@ export default function AppSettings() {
           </div>
           {/* Time Period Settings */}
           <div className="mx-auto flex w-full items-center justify-between gap-3">
-            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-blax bg-primary shadow-sm shadow-blax/45">
+            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-blax bg-accent p-3 shadow-sm shadow-blax/45">
               <p className="text-6xl font-black text-bgPrimary shadow-blax/75 text-shadow">
                 25
               </p>
@@ -27,7 +27,7 @@ export default function AppSettings() {
                 {t("focusTime")}
               </span>
             </div>
-            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-primary bg-secondary shadow-sm shadow-blax/45">
+            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-primary bg-secondary p-3 shadow-sm shadow-blax/45">
               <p className="text-6xl font-black text-bgPrimary shadow-blax/75 text-shadow">
                 5
               </p>
@@ -35,7 +35,7 @@ export default function AppSettings() {
                 {t("shortBreak")}
               </span>
             </div>
-            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-primary bg-secondary45 shadow-sm shadow-blax/45">
+            <div className="flex h-32 flex-grow items-center justify-center rounded-2xl border-b border-primary bg-secondary45 p-3 shadow-sm shadow-blax/45">
               <p className="text-6xl font-black text-primary shadow-secondary45 text-shadow">
                 15
               </p>

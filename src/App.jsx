@@ -122,9 +122,9 @@ function Navbar() {
         className="group flex w-1/2 cursor-pointer items-center gap-0 transition-all duration-300 hover:gap-2"
       >
         {/* Three Chainiks */}
-        <GiTeapot className="block aspect-square size-8 rounded-full text-blax opacity-35 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
-        <GiTeapot className="block aspect-square size-8 rounded-full text-blax opacity-55 transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
-        <GiTeapot className="block aspect-square size-8 rounded-full text-blax transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-accent opacity-35 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-accent opacity-55 transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
+        <GiTeapot className="block aspect-square size-8 rounded-full text-accent transition-all delay-500 duration-300 group-hover:rotate-[25deg]" />
         <div className="invisible absolute flex justify-between pl-1 xsm:visible xsm:relative">
           <h1 className="font-Outfit text-2xl font-semibold tracking-tight text-primary">
             {t("chaidoro")}

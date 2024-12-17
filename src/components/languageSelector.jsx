@@ -2,14 +2,19 @@ import { useState, useEffect } from "react";
 import { IoChevronDown } from "react-icons/io5";
 import "../i18n"; // Assuming your i18n configuration is imported here
 import { useTranslation } from "react-i18next";
+import flagLT from "../assets/flags/lt.svg";
+import flagPL from "../assets/flags/pl.svg";
+import flagCN from "../assets/flags/cn.svg";
+import flagEN from "../assets/flags/gb.svg";
 
 export default function SearchableDropdown() {
   const { i18n } = useTranslation();
 
   const languages = [
-    { name: "English", code: "en", flag: "🇬🇧" },
-    { name: "Lithuanian | Lietuvių", code: "lt", flag: "🇱🇹" },
-    { name: "Chinese | 中国人", code: "zh", flag: "🇨🇳" },
+    { name: "English", code: "en", flag: flagEN },
+    { name: "Lithuanian | Lietuvių", code: "lt", flag: flagLT },
+    { name: "Polish | Polski", code: "pl", flag: flagPL },
+    { name: "Chinese | 中国人", code: "zh", flag: flagCN },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +25,7 @@ export default function SearchableDropdown() {
       (savedLanguage && JSON.parse(savedLanguage)) || {
         name: "English",
         code: "en",
-        flag: "🇬🇧",
+        flag: flagEN,
       }
     );
   });
@@ -45,7 +50,11 @@ export default function SearchableDropdown() {
         }`}
       >
         <span className="flex items-center">
-          <span>{selectedLanguage.flag}</span>
+          <img
+            src={selectedLanguage.flag}
+            className="w-6 rounded-md border border-blax"
+            alt=""
+          />
           <div className="mx-3 h-3 w-[1px] bg-primary"></div>
           {selectedLanguage.name}
         </span>
@@ -80,7 +89,11 @@ export default function SearchableDropdown() {
                 }}
                 className="flex cursor-pointer items-center px-6 py-3 text-primary hover:bg-secondary45"
               >
-                <span>{language.flag}</span>
+                <img
+                  src={language.flag}
+                  className="w-6 rounded-md border border-blax"
+                  alt="flag of the country"
+                />
                 <div className="mx-3 h-3 w-[1px] bg-primary"></div>
                 {language.name}
               </li>

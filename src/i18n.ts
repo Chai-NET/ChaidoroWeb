@@ -98,6 +98,53 @@ i18n.use(initReactI18next).init({
           "Galite sukurti savo pasirinktą temą. Taip pat galite naudoti HEX vertes.",
       },
     },
+    pl: {
+      translation: {
+        // Strona Główna:
+        chaidoro: "Chaidoro",
+        todo: "Do Zrobienia",
+        settings: "Ustawienia",
+        clockMessage: "To jest wczesna wersja demo, proszę jej nie używać.",
+        toDoList: "Lista Zadań",
+        emptyMsg: "Lista jest pusta!",
+        emptyMsgDsc:
+          "Twoja lista zadań jest pusta, ale to w porządku, dopóki kubek nie jest pusty.",
+        taskAddMsg: "Wpisz tutaj, aby dodać zadanie...",
+
+        // Strona "Do Zrobienia":
+        remainingTasks: "Pozostałe zadania:",
+
+        // Strona ustawień:
+        application: "Aplikacja",
+        themes: "Motywy",
+        network: "Sieć",
+        version: "wersja",
+
+        // Ustawienia aplikacji:
+        clock: "Zegar",
+        clockDsc: "Okres skupienia / Format czasu",
+        focusTime: "Czas skupienia",
+        shortBreak: "Krótka przerwa",
+        longBreak: "Długa przerwa",
+        clockMsg:
+          "* Gorąco zachęcamy do niezmieniania formatu 25 minut pracy / 5 minut przerwy. Z opinii ludzi wynika, że 25 minut pracy jest najlepszym formatem dla większości osób.",
+
+        // Języki:
+        languages: "Języki",
+        languagesDsc: "Obecnie mamy 3 różne języki.",
+        languagesMsgOne:
+          "** Mimo że dołożyłem wszelkich starań, aby uwzględnić jak najwięcej tłumaczeń, mogą nadal występować błędy. Jeśli zauważysz jakieś nieścisłości, proszę, nie wahaj się skontaktować ze mną mailowo. Chciałbym podziękować moim przyjaciołom, którzy przyczynili się do tłumaczeń. Ich imiona są wymienione na stronie informacyjnej witryny.",
+        languagesMsgTwo:
+          "*** Jeśli jesteś zainteresowany pomocą w tłumaczeniu tej witryny, będę bardzo wdzięczny za Twoją pomoc. Twoje wkłady zostaną uznane w projekcie. Proszę, skontaktuj się ze mną!",
+
+        // Ustawienia Motywów:
+        themesDsc: "Własne, gotowe motywy.",
+        yourCustomTheme: "Twój własny motyw",
+        yourCustomThemeDsc:
+          "Możesz stworzyć własny motyw. Możesz także używać kodów w formacie HEX.",
+      },
+    },
+
     zh: {
       translation: {
         // Main Page:
