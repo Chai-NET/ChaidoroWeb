@@ -1,0 +1,32 @@
+{
+  "id": "12345",
+  "title": "Complete Research Paper on Lithuanian Language",
+  "description": "Write and proofread the research paper focusing on the linguistic structure, history, and dialects of the Lithuanian language.",
+  "status": "In Progress",
+  "steps": [
+    {
+      "step": "Research Lithuanian linguistic features",
+      "status": "completed"
+    },
+    { "step": "Write draft on phonology and grammar", "status": "in-progress" },
+    { "step": "Proofread and finalize paper", "status": "not-started" }
+  ],
+  "progress": 33,
+  "priority": "High",
+  "category": "University",
+  "tags": ["Research", "Linguistics", "Lithuanian"],
+  "dueDate": "2025-01-15",
+  "assignedTo": "Me",
+  "createdAt": "2025-01-01",
+  "updatedAt": "2025-01-09",
+  "reminder": "2025-01-14T12:00:00Z",
+  "comments": [
+    {
+      "author": "Ailė",
+      "message": "Make sure to include examples from both Aukštaitian and Samogitian dialects."
+    }
+  ],
+  "attachments": ["lithuanian-language-outline.docx"],
+  "color": "#FF5733",
+  "recurring": false
+}
