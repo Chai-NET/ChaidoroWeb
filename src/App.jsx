@@ -125,6 +125,10 @@ function Navbar() {
         {/* <GiTeapot className="block aspect-square size-8 rounded-full text-accent opacity-35 transition-all delay-0 duration-300 group-hover:rotate-[25deg]" />
         <GiTeapot className="block aspect-square size-8 rounded-full text-accent opacity-55 transition-all delay-200 duration-300 group-hover:rotate-[25deg]" />
         <GiTeapot className="block aspect-square size-8 rounded-full text-accent transition-all delay-500 duration-300 group-hover:rotate-[25deg]" /> */}
+
+        {/* Pomodoro */}
+        <div className="size-5 rounded-b-full border border-b-2 border-blax bg-accent transition-all duration-500 ease-in-out" />
+
         <div className="invisible absolute flex justify-between pl-1 xsm:visible xsm:relative">
           <h1 className="font-Outfit text-2xl font-semibold tracking-tight text-primary">
             {t("chaidoro")}

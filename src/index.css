@@ -45,11 +45,10 @@
 .theme-white {
   --color-darkest: #252525;
   --color-darker: #a1a5a5;
-  --color-dark: #d1e0f0;
+  --color-dark: #d77171;
   --color-text: #f5f5f5;
-  --color-bg: #ffffff;
-  --color-accentColor: #abcaeb;
-  /* --color-accentColor: #abcaeb; */
+  --color-bg: #f5f5f5;
+  --color-accentColor: #b83636;
 }
 
 .theme-black {
