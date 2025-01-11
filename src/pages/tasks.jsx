@@ -53,7 +53,11 @@ function Tasks() {
           {t("remainingTasks")} {todos.length}
         </h2>
       </div>
-
+      <TaskInputField
+        task={task}
+        onTaskChange={setTask}
+        onKeyPress={handleKeyPress}
+      />
       {todos.length === 0 ? (
         <div className="relative flex select-none flex-col items-center justify-center gap-3 py-12 text-center font-Outfit">
           <h1 className="text-primary/45 text-xl font-light md:text-2xl">
@@ -79,14 +83,6 @@ function Tasks() {
           onRemove={handleRemoveTodo}
         />
       )}
-
-      <div className="mb-24">
-        <TaskInputField
-          task={task}
-          onTaskChange={setTask}
-          onKeyPress={handleKeyPress}
-        />
-      </div>
     </div>
   );
 }
