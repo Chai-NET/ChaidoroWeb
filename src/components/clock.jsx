@@ -23,33 +23,39 @@ function Clock() {
   return (
     <>
       <div className={`theme-${theme} flex items-center justify-center`}>
-        <div className="relative w-full rounded-xl border border-b-2 border-blax bg-accent py-24 text-center font-AlbertSans text-blax text-text shadow shadow-text">
-          <p className="font-RobotoCondensed text-xs font-light proportional-nums tracking-widest">
+        <div className="text-clockText relative w-full rounded-xl border border-b-2 border-blax bg-secondary45 py-24 text-center font-AlbertSans shadow shadow-text">
+          {/* <p className="font-RobotoCondensed text-xs font-light proportional-nums tracking-widest">
             {t("clockMessage")}
-          </p>
+          </p> */}
+
+          {/* Clock types */}
+
+          <div className="flex items-center justify-center gap-9 font-Outfit text-lg font-light">
+            <button className="cursor-pointer rounded-xl p-2 px-5 transition-all duration-300 hover:bg-secondary">
+              Focus
+            </button>
+            <div className="bg-clockText h-3 w-0.5 rounded-full" />
+            <button className="cursor-pointer rounded-xl p-2 px-5 transition-all duration-300 hover:bg-secondary">
+              Break
+            </button>
+          </div>
+
           <div className="flex items-center justify-center gap-3">
             <h1 className="text-7xl font-black shadow-text sm:text-8xl md:text-9xl">
               25
             </h1>
-            <div className="h-1 w-6 rounded-full bg-text" />
+            <div className="bg-clockText h-1 w-6 rounded-full" />
 
             <h1 className="text-7xl font-black shadow-text sm:text-8xl md:text-9xl">
               00
             </h1>
           </div>
 
+          {/* Start button */}
           <div className="flex items-center justify-center gap-3 px-12 xsm:px-16 sm:px-24 md:px-52 xl:px-72">
-            <div className="h-[1px] w-full bg-text" />
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              whileDrag={{ scale: 0.9, rotate: 10 }}
-              drag
-              className="z-30 mt-3 aspect-square cursor-pointer rounded-full border border-b-2 border-text bg-text px-4 font-Outfit text-lg font-semibold uppercase shadow-sm shadow-text"
-            >
-              <MdAddAlarm className="size-7 fill-accent outline-1" />
-            </motion.button>
-            <div className="h-[1px] w-full bg-text" />
+            <button className="bg-clockText border-clockText mt-6 rounded-xl border border-b-4 p-3 px-6 font-Outfit text-xl font-semibold uppercase text-secondary45">
+              Start
+            </button>
           </div>
         </div>
       </div>

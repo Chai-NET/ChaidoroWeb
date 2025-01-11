@@ -20,6 +20,7 @@ export default {
         secondary: "var(--color-darker)",
         secondary45: "var(--color-dark)",
         text: "var(--color-text)",
+        clockText: "var(--color-clockText)",
         bgPrimary: "var(--color-bg)",
         accent: "var(--color-accentColor)",
         blax: "#252525",
