@@ -52,7 +52,7 @@ export default function TaskPanel() {
           {/* - */}
 
           {/* Sticky Title and Input field */}
-          <div className="sticky top-0 z-30 w-full border-red-600 bg-bgPrimary py-3 pt-6">
+          <div className="sticky top-0 z-20 w-full rounded-b-xl border-b-2 border-secondary bg-neutral-50/10 py-3 pt-6 backdrop-blur-md">
             {/* - */}
 
             {/* Title bar */}
@@ -66,7 +66,7 @@ export default function TaskPanel() {
             </div>
 
             {/* Task Input Field Absolute */}
-            <div className="my-3 w-full">
+            <div className="mt-3 w-full">
               <TaskInputField
                 task={task}
                 onTaskChange={setTask}
@@ -76,9 +76,9 @@ export default function TaskPanel() {
             {/* - */}
 
             {/* A message for users */}
-            <p className="text-center font-Outfit font-light text-secondary">
+            {/* <p className="text-center font-Outfit font-light text-secondary">
               ٩(◕‿◕｡)۶
-            </p>
+            </p> */}
           </div>
 
           {/* To-Do List */}

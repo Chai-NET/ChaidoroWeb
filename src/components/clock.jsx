@@ -22,19 +22,18 @@ function Clock() {
 
   return (
     <>
-      <div className={`theme-${theme} flex items-center justify-center`}>
-        <div className="text-clockText relative w-full rounded-xl border border-b-2 border-blax bg-secondary45 py-24 text-center font-AlbertSans shadow shadow-text">
+      <div className={`theme-${theme} z-30 flex items-center justify-center`}>
+        <div className="relative w-full rounded-xl border border-b-2 border-blax bg-secondary45 py-9 text-center font-AlbertSans text-clockText shadow shadow-text">
           {/* <p className="font-RobotoCondensed text-xs font-light proportional-nums tracking-widest">
             {t("clockMessage")}
           </p> */}
 
           {/* Clock types */}
-
           <div className="flex items-center justify-center gap-9 font-Outfit text-lg font-light">
             <button className="cursor-pointer rounded-xl p-2 px-5 transition-all duration-300 hover:bg-secondary">
               Focus
             </button>
-            <div className="bg-clockText h-3 w-0.5 rounded-full" />
+            <div className="h-3 w-0.5 rounded-full bg-clockText" />
             <button className="cursor-pointer rounded-xl p-2 px-5 transition-all duration-300 hover:bg-secondary">
               Break
             </button>
@@ -44,7 +43,7 @@ function Clock() {
             <h1 className="text-7xl font-black shadow-text sm:text-8xl md:text-9xl">
               25
             </h1>
-            <div className="bg-clockText h-1 w-6 rounded-full" />
+            <div className="h-1 w-6 rounded-full bg-clockText" />
 
             <h1 className="text-7xl font-black shadow-text sm:text-8xl md:text-9xl">
               00
@@ -53,7 +52,7 @@ function Clock() {
 
           {/* Start button */}
           <div className="flex items-center justify-center gap-3 px-12 xsm:px-16 sm:px-24 md:px-52 xl:px-72">
-            <button className="bg-clockText border-clockText mt-6 rounded-xl border border-b-4 p-3 px-6 font-Outfit text-xl font-semibold uppercase text-secondary45">
+            <button className="mt-6 rounded-xl border border-b-4 border-clockText bg-clockText p-3 px-6 font-Outfit text-xl font-semibold uppercase text-secondary45">
               Start
             </button>
           </div>
