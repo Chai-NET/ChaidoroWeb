@@ -52,7 +52,7 @@ export default function TaskPanel() {
           {/* - */}
 
           {/* Sticky Title and Input field */}
-          <div className="sticky top-0 z-20 w-full rounded-b-xl border-b-2 border-secondary bg-neutral-50/10 py-3 pt-6 backdrop-blur-md">
+          <div className="sticky top-0 z-20 w-full rounded-b-xl border-secondary py-3 pt-6 backdrop-blur-md">
             {/* - */}
 
             {/* Title bar */}
