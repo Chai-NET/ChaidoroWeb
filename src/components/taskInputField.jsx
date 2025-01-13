@@ -15,7 +15,7 @@ const TaskInputField = ({ task, onTaskChange, handleAddTask, onKeyPress }) => {
             <input
               onKeyDown={onKeyPress}
               type="text"
-              maxLength={70}
+              maxLength={30}
               value={task}
               onChange={(e) => onTaskChange(e.target.value)}
               id="todos"

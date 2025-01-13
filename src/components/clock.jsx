@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { useEffect } from "react";
 import "../i18n";
 import { useTranslation } from "react-i18next";
 import { AnimatePresence, motion } from "motion/react";
@@ -80,7 +78,7 @@ function Clock() {
 
             {/* Start button */}
             <div className="z-20 flex items-center justify-center gap-3 px-12 xsm:px-16 sm:px-24 md:px-52 xl:px-72">
-              <button className="z-20 mt-6 rounded-xl border border-b-4 border-clockText bg-clockText p-3 px-6 font-Outfit text-xl font-semibold uppercase text-secondary45">
+              <button className="z-20 mt-6 rounded-xl border border-b-4 border-clockText bg-clockText p-2 px-9 font-Outfit text-base font-semibold uppercase text-secondary45">
                 Start
               </button>
             </div>
