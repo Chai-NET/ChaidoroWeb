@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { GiTeapot } from "react-icons/gi";
 import { TbSteam } from "react-icons/tb";
 import TaskInputField from "./taskInputField.jsx";
-import TaskList from "./taskList.jsx";
+import Tasks from "./tasks.jsx";
 
 import "../i18n";
 import { useTranslation } from "react-i18next";
@@ -103,7 +103,7 @@ export default function TaskPanel() {
                 </div>
               </div>
             ) : (
-              <TaskList
+              <Tasks
                 todos={todos}
                 onReorder={setTodos}
                 onRemove={handleRemoveTodo}

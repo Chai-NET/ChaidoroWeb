@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import TaskInputField from "../components/taskInputField.jsx";
-import TaskList from "../components/taskList.jsx";
+import Tasks from "../components/tasks.jsx";
 import { FaSortAmountDown } from "react-icons/fa";
 import { TbSteam } from "react-icons/tb";
 import { GiTeapot } from "react-icons/gi";
 import { useTranslation } from "react-i18next";
 import "../customCSS/noScroll.css"; // Custom CSS that removes Scroll bar
 
-function Tasks() {
+function TaskList() {
   const today = new Date();
   const month = today.getMonth();
   const year = today.getFullYear();
@@ -77,14 +77,10 @@ function Tasks() {
           </div>
         </div>
       ) : (
-        <TaskList
-          todos={todos}
-          onReorder={setTodos}
-          onRemove={handleRemoveTodo}
-        />
+        <Tasks todos={todos} onReorder={setTodos} onRemove={handleRemoveTodo} />
       )}
     </div>
   );
 }
 
-export default Tasks;
+export default TaskList;

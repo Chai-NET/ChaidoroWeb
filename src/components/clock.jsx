@@ -51,9 +51,9 @@ function Clock() {
               exit={{ scale: 0.7, opacity: 0, filter: "blur(10px)" }}
               className="relative z-0"
             >
-              <div className="absolute z-0 aspect-square w-64 -translate-x-44 translate-y-32 rounded-full bg-accent opacity-85 blur-[30px]" />
+              <div className="absolute z-0 aspect-square w-96 -translate-x-44 translate-y-32 rounded-full bg-accent opacity-85 blur-[100px]" />
 
-              <div className="absolute right-0 top-0 z-0 aspect-square w-64 -translate-y-16 translate-x-40 rounded-full bg-accent opacity-85 blur-[30px]" />
+              <div className="absolute right-0 top-0 z-0 aspect-square w-96 -translate-y-16 translate-x-40 rounded-full bg-accent opacity-85 blur-[100px]" />
             </motion.div>
 
             {/* Clock types */}

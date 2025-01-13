@@ -16,7 +16,7 @@ import { ThemeProvider, useTheme } from "./utils/ThemeContext.jsx";
 // Pages
 import Error404 from "./pages/error404.jsx";
 import Pomodoro from "./pages/pomodoro.jsx";
-import Tasks from "./pages/tasks.jsx";
+import TaskList from "./pages/taskList.jsx";
 import Settings from "./pages/settings.jsx";
 
 // Libraries
@@ -56,9 +56,9 @@ const AnimatedRoutes = () => {
             </motion.div>
           }
         />
-        {/* Tasks */}
+        {/* To-Do */}
         <Route
-          path="/tasks"
+          path="/todo"
           element={
             <motion.div
               className="h-full"
@@ -68,7 +68,7 @@ const AnimatedRoutes = () => {
               variants={pageTransition}
               transition={{ duration: 0.5 }}
             >
-              <Tasks />
+              <TaskList />
             </motion.div>
           }
         />
@@ -141,7 +141,7 @@ function Navbar() {
       <div
         className={`theme-${theme} text-md flex items-center justify-end space-x-3 rounded-md font-medium capitalize`}
       >
-        <a className="flex items-center gap-2" href="/tasks">
+        <a className="flex items-center gap-2" href="/todo">
           <FaCheckDouble className="size-4 fill-primary transition-all duration-500" />
           <p className="invisible absolute text-primary md:visible md:relative">
             {t("todo")}

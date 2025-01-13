@@ -1,7 +1,7 @@
 import { FaCheck } from "react-icons/fa";
 import { AnimatePresence, motion, Reorder } from "motion/react";
 
-const TaskList = ({ todos, onReorder, onRemove }) => {
+const Tasks = ({ todos, onReorder, onRemove }) => {
   return (
     <ul className="my-6 pb-12 text-start font-poppins">
       <Reorder.Group values={todos} onReorder={onReorder}>
@@ -47,4 +47,4 @@ const TaskList = ({ todos, onReorder, onRemove }) => {
   );
 };
 
-export default TaskList;
+export default Tasks;
