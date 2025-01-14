@@ -19,31 +19,68 @@ export default function TaskPanel() {
   const date = today.getDate();
   const currentDate = month + "/" + date + "/" + year;
   // Load TODOs from local storage on app startup:
+
+  // Read and write for local storage
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos"));
     if (storedTodos !== null && [...storedTodos].length !== 0) {
       setTodos(storedTodos);
-      setTask("");
     }
-    console.log("Local Storage:", todos[1]);
   }, []);
 
-  // Update local storage whenever TODOs change:
+  // Updates the local storage each time change happens
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  // Add Task on keypress enter:
+  // Creates a task with the enter button
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && task.trim() !== "") {
-      setTodos((prevTodos) => [...prevTodos, task]);
+      const newTodo = { task, status: "active" };
+      setTodos((prevTodos) => [...prevTodos, newTodo]);
       setTask("");
     }
   };
 
+  // Marks task as completed
+  const handleCompleteTodo = (index) => {
+    const timestamp = new Date().getTime();
+    setTodos((prevTodos) => {
+      const updatedTodos = [...prevTodos];
+      updatedTodos[index] = {
+        ...updatedTodos[index],
+        status: "completed",
+        completedAt: timestamp,
+      };
+      return updatedTodos;
+    });
+  };
+
+  // Removes the task from the storage
   const handleRemoveTodo = (index) => {
     setTodos((prevTodos) => prevTodos.filter((_, i) => i !== index));
   };
+
+  // Checks for interval for archiving the completed tasks
+  useEffect(() => {
+    const checkForArchivedTodos = () => {
+      const currentTime = new Date().getTime();
+      setTodos((prevTodos) => {
+        return prevTodos.map((todo) => {
+          if (
+            todo.status === "completed" &&
+            currentTime - todo.completedAt > 86400000
+          ) {
+            return { ...todo, status: "archived" };
+          }
+          return todo;
+        });
+      });
+    };
+
+    const interval = setInterval(checkForArchivedTodos, 60000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -106,6 +143,7 @@ export default function TaskPanel() {
               <Tasks
                 todos={todos}
                 onReorder={setTodos}
+                onComplete={handleCompleteTodo}
                 onRemove={handleRemoveTodo}
               />
             )}
