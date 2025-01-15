@@ -3,11 +3,12 @@ import { GiTeapot } from "react-icons/gi";
 import { TbSteam } from "react-icons/tb";
 import TaskInputField from "./taskInputField.jsx";
 import Tasks from "./tasks.jsx";
+import CompletedTasks from "./completedTasks.jsx";
 
 import "../i18n";
 import { useTranslation } from "react-i18next";
 
-export default function TaskPanel() {
+export default function PomodoroTasks() {
   // Functions:
   const today = new Date();
   const month = today.getMonth();
@@ -26,6 +27,17 @@ export default function TaskPanel() {
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
+
+  // Active tasks count:
+  const activeTodosCount = todos.filter(
+    (todo) => todo.status === "active",
+  ).length;
+
+  // Completed tasks count:
+  const completedTodosCount = todos.filter(
+    (todo) => todo.status === "completed",
+  ).length;
+
   return (
     <>
       <div className="relative h-full w-full overflow-y-auto pb-9">
@@ -42,7 +54,7 @@ export default function TaskPanel() {
                 {t("toDoList")}
               </h2>
               <h2 className="text-sm font-semibold text-secondary">
-                {todos.length}
+                {activeTodosCount}
               </h2>
             </div>
 
@@ -81,6 +93,26 @@ export default function TaskPanel() {
               </div>
             ) : (
               <Tasks todos={todos} setTodos={setTodos} />
+            )}
+            {todos.length === 0 ? (
+              <div className="absolute"></div>
+            ) : (
+              <div className="">
+                <div className="flex items-center justify-center gap-3 font-bold">
+                  <div className="h-0.5 w-full bg-secondary45" />
+                  <div className="flex gap-1">
+                    <h2 className="text-nowrap text-xl font-semibold capitalize text-primary">
+                      Completed tasks
+                    </h2>
+                    <p className="text-sm font-semibold text-secondary">
+                      {completedTodosCount}
+                    </p>
+                  </div>
+
+                  <div className="h-0.5 w-full bg-secondary45" />
+                </div>
+                <CompletedTasks todos={todos} setTodos={setTodos} />
+              </div>
             )}
           </div>
         </div>

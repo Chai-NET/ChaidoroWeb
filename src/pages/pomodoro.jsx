@@ -1,5 +1,5 @@
 import Clock from "../components/clock.jsx";
-import TaskPanel from "../components/taskPanel.jsx";
+import PomodoroTasks from "../components/pomodoroTasks.jsx";
 
 // Utilities
 import { useTheme } from "../utils/ThemeContext.jsx";
@@ -12,7 +12,7 @@ function Pomodoro() {
         className={`theme-${theme} relative flex h-full flex-col bg-bgPrimary`}
       >
         <Clock />
-        <TaskPanel />
+        <PomodoroTasks />
       </div>
     </>
   );

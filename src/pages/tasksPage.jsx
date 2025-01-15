@@ -7,7 +7,7 @@ import { GiTeapot } from "react-icons/gi";
 import { useTranslation } from "react-i18next";
 import "../customCSS/noScroll.css"; // Custom CSS that removes Scroll bar
 
-function TaskList() {
+export default function TasksPage() {
   // Functions:
   const today = new Date();
   const month = today.getMonth();
@@ -65,5 +65,3 @@ function TaskList() {
     </div>
   );
 }
-
-export default TaskList;

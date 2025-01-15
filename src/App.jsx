@@ -16,7 +16,7 @@ import { ThemeProvider, useTheme } from "./utils/ThemeContext.jsx";
 // Pages
 import Error404 from "./pages/error404.jsx";
 import Pomodoro from "./pages/pomodoro.jsx";
-import TaskList from "./pages/taskList.jsx";
+import TasksPage from "./pages/tasksPage.jsx";
 import Settings from "./pages/settings.jsx";
 
 // Libraries
@@ -68,7 +68,7 @@ const AnimatedRoutes = () => {
               variants={pageTransition}
               transition={{ duration: 0.5 }}
             >
-              <TaskList />
+              <TasksPage />
             </motion.div>
           }
         />
