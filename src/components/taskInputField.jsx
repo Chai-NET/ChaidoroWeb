@@ -1,9 +1,20 @@
-import { TbSteam, TbArrowBigUpLinesFilled } from "react-icons/tb";
+import { useState, useEffect } from "react";
+import { TbSteam } from "react-icons/tb";
 
 import "../i18n";
 import { useTranslation } from "react-i18next";
 
-const TaskInputField = ({ task, onTaskChange, handleAddTask, onKeyPress }) => {
+export default function TaskInputField({ todos, setTodos }) {
+  const [task, setTask] = useState("");
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && task.trim() !== "") {
+      const newTodo = { id: Date.now(), task, status: "active" };
+      setTodos([...todos, newTodo]);
+      setTask("");
+    }
+  };
+
   const { t } = useTranslation();
   return (
     <div className="">
@@ -13,18 +24,18 @@ const TaskInputField = ({ task, onTaskChange, handleAddTask, onKeyPress }) => {
           <div className="relative flex flex-grow items-center gap-x-6 px-3 text-secondary">
             <TbSteam />
             <input
-              onKeyDown={onKeyPress}
+              onKeyDown={handleKeyPress}
               type="text"
               maxLength={30}
               value={task}
-              onChange={(e) => onTaskChange(e.target.value)}
+              onChange={(e) => setTask(e.target.value)}
               id="todos"
               placeholder={t("taskAddMsg")}
               autoComplete="off"
               className="peer w-full appearance-none border-opacity-90 bg-transparent py-1 font-Outfit tracking-widest text-primary outline-none placeholder:tracking-tight placeholder:text-secondary placeholder:opacity-80 focus:ring-0"
             />
             <label className="text-md peer-focus:border-xblack peer-focus:text-xblack pointer-events-none absolute bottom-6 right-0 z-10 origin-[0] scale-100 transform rounded-xl bg-white px-1 opacity-0 transition-all duration-300 ease-in-out peer-focus:border-2 peer-focus:px-6 peer-focus:py-2 peer-focus:opacity-100">
-              Add # for grouping
+              Press enter to add task
             </label>
             {/* Add button */}
             {/* <button className="bg-clockText rounded-lg p-2">
@@ -35,6 +46,4 @@ const TaskInputField = ({ task, onTaskChange, handleAddTask, onKeyPress }) => {
       </div>
     </div>
   );
-};
-
-export default TaskInputField;
+}

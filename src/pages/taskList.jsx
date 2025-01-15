@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import TaskInputField from "../components/taskInputField.jsx";
 import Tasks from "../components/tasks.jsx";
 import { FaSortAmountDown } from "react-icons/fa";
@@ -8,77 +8,24 @@ import { useTranslation } from "react-i18next";
 import "../customCSS/noScroll.css"; // Custom CSS that removes Scroll bar
 
 function TaskList() {
+  // Functions:
   const today = new Date();
   const month = today.getMonth();
   const year = today.getFullYear();
   const date = today.getDate();
   const currentDate = month + "/" + date + "/" + year;
-
   const { t } = useTranslation();
-  const [task, setTask] = useState("");
-  const [todos, setTodos] = useState([]);
 
-  // Read and write for local storage
-  useEffect(() => {
+  // Load todos from localStorage on mount
+  const [todos, setTodos] = useState(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos"));
-    if (storedTodos !== null && [...storedTodos].length !== 0) {
-      setTodos(storedTodos);
-    }
-  }, []);
+    return storedTodos || [];
+  });
 
-  // Updates the local storage each time change happens
+  // Save todos to localStorage on change
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
-
-  // Creates a task with the enter button
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter" && task.trim() !== "") {
-      const newTodo = { task, status: "active" };
-      setTodos((prevTodos) => [...prevTodos, newTodo]);
-      setTask("");
-    }
-  };
-
-  // Marks task as completed
-  const handleCompleteTodo = (index) => {
-    const timestamp = new Date().getTime();
-    setTodos((prevTodos) => {
-      const updatedTodos = [...prevTodos];
-      updatedTodos[index] = {
-        ...updatedTodos[index],
-        status: "completed",
-        completedAt: timestamp,
-      };
-      return updatedTodos;
-    });
-  };
-
-  // Removes the task from the storage
-  const handleRemoveTodo = (index) => {
-    setTodos((prevTodos) => prevTodos.filter((_, i) => i !== index));
-  };
-
-  // Checks for interval for archiving the completed tasks
-  useEffect(() => {
-    const checkForArchivedTodos = () => {
-      const currentTime = new Date().getTime();
-      setTodos((prevTodos) => {
-        return prevTodos.map((todo) => {
-          if (
-            todo.status === "completed" &&
-            currentTime - todo.completedAt > 86400000
-          ) {
-            return { ...todo, status: "archived" };
-          }
-          return todo;
-        });
-      });
-    };
-
-    const interval = setInterval(checkForArchivedTodos, 60000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <div className="h-full overflow-y-scroll">
@@ -93,11 +40,7 @@ function TaskList() {
           {t("remainingTasks")} {todos.length}
         </h2>
       </div>
-      <TaskInputField
-        task={task}
-        onTaskChange={setTask}
-        onKeyPress={handleKeyPress}
-      />
+      <TaskInputField todos={todos} setTodos={setTodos} />
       {todos.length === 0 ? (
         <div className="relative flex select-none flex-col items-center justify-center gap-3 py-12 text-center font-Outfit">
           <h1 className="text-primary/45 text-xl font-light md:text-2xl">
@@ -117,12 +60,7 @@ function TaskList() {
           </div>
         </div>
       ) : (
-        <Tasks
-          todos={todos}
-          onComplete={handleCompleteTodo}
-          onReorder={setTodos}
-          onRemove={handleRemoveTodo}
-        />
+        <Tasks todos={todos} setTodos={setTodos} />
       )}
     </div>
   );

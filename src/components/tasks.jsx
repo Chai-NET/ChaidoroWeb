@@ -1,10 +1,73 @@
+import { useState, useEffect } from "react";
 import { AnimatePresence, motion, Reorder } from "motion/react";
 import { FaCheck, FaPen, FaTrash, FaHandPaper } from "react-icons/fa";
 
-const Tasks = ({ todos, onReorder, onRemove, onComplete }) => {
+export default function Tasks({ todos, setTodos }) {
+  // Functions:
+  const today = new Date();
+  const month = today.getMonth();
+  const year = today.getFullYear();
+  const date = today.getDate();
+  const currentDate = month + "/" + date + "/" + year;
+
+  // Read and write for local storage
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem("todos"));
+    if (storedTodos !== null && [...storedTodos].length !== 0) {
+      setTodos(storedTodos);
+    }
+  }, []);
+
+  // Updates the local storage each time change happens
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
+
+  // Creates a task with the enter button
+
+  // Marks task as completed
+  const handleCompleteTodo = (index) => {
+    const timestamp = new Date().getTime();
+    setTodos((prevTodos) => {
+      const updatedTodos = [...prevTodos];
+      updatedTodos[index] = {
+        ...updatedTodos[index],
+        status: "completed",
+        completedAt: timestamp,
+      };
+      return updatedTodos;
+    });
+  };
+
+  // Removes the task from the storage
+  const handleRemoveTodo = (index) => {
+    setTodos((prevTodos) => prevTodos.filter((_, i) => i !== index));
+  };
+
+  // Checks for interval for archiving the completed tasks
+  useEffect(() => {
+    const checkForArchivedTodos = () => {
+      const currentTime = new Date().getTime();
+      setTodos((prevTodos) => {
+        return prevTodos.map((todo) => {
+          if (
+            todo.status === "completed" &&
+            currentTime - todo.completedAt > 86400000
+          ) {
+            return { ...todo, status: "archived" };
+          }
+          return todo;
+        });
+      });
+    };
+
+    const interval = setInterval(checkForArchivedTodos, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <ul className="my-6 pb-12 text-start font-poppins">
-      <Reorder.Group values={todos} onReorder={onReorder}>
+      <Reorder.Group values={todos} onReorder={setTodos}>
         <AnimatePresence>
           {todos
             .filter((todo) => todo.status === "active")
@@ -29,7 +92,7 @@ const Tasks = ({ todos, onReorder, onRemove, onComplete }) => {
                       {/* Completed button */}
                       <button
                         className="peer aspect-square rounded-full border border-emerald-600 border-secondary p-1 transition-all duration-300 ease-in-out hover:bg-emerald-600"
-                        onClick={() => onComplete(index)}
+                        onClick={() => handleCompleteTodo(index)}
                       >
                         <FaCheck className="size-3 fill-white opacity-0 transition-all duration-100 ease-in-out group-hover:opacity-100" />
                       </button>
@@ -51,7 +114,7 @@ const Tasks = ({ todos, onReorder, onRemove, onComplete }) => {
                         {/* Remove button */}
                         <button
                           className="aspect-square rotate-90 rounded-full border-t border-secondary bg-white p-2 opacity-0 transition-all delay-100 duration-300 ease-in-out group-hover:-translate-y-6 group-hover:rotate-0 group-hover:opacity-100"
-                          onClick={() => onRemove(index)}
+                          onClick={() => handleRemoveTodo(index)}
                         >
                           <FaTrash className="size-4 fill-red-400 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100" />
                         </button>
@@ -74,6 +137,4 @@ const Tasks = ({ todos, onReorder, onRemove, onComplete }) => {
       </Reorder.Group>
     </ul>
   );
-};
-
-export default Tasks;
+}

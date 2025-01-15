@@ -8,80 +8,24 @@ import "../i18n";
 import { useTranslation } from "react-i18next";
 
 export default function TaskPanel() {
-  const { t } = useTranslation();
-  const [task, setTask] = useState();
-  const [todos, setTodos] = useState([]); //Can leave this empty
-
   // Functions:
   const today = new Date();
   const month = today.getMonth();
   const year = today.getFullYear();
   const date = today.getDate();
   const currentDate = month + "/" + date + "/" + year;
-  // Load TODOs from local storage on app startup:
+  const { t } = useTranslation();
 
-  // Read and write for local storage
-  useEffect(() => {
+  // Load todos from localStorage on mount
+  const [todos, setTodos] = useState(() => {
     const storedTodos = JSON.parse(localStorage.getItem("todos"));
-    if (storedTodos !== null && [...storedTodos].length !== 0) {
-      setTodos(storedTodos);
-    }
-  }, []);
+    return storedTodos || [];
+  });
 
-  // Updates the local storage each time change happens
+  // Save todos to localStorage on change
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
-
-  // Creates a task with the enter button
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter" && task.trim() !== "") {
-      const newTodo = { task, status: "active" };
-      setTodos((prevTodos) => [...prevTodos, newTodo]);
-      setTask("");
-    }
-  };
-
-  // Marks task as completed
-  const handleCompleteTodo = (index) => {
-    const timestamp = new Date().getTime();
-    setTodos((prevTodos) => {
-      const updatedTodos = [...prevTodos];
-      updatedTodos[index] = {
-        ...updatedTodos[index],
-        status: "completed",
-        completedAt: timestamp,
-      };
-      return updatedTodos;
-    });
-  };
-
-  // Removes the task from the storage
-  const handleRemoveTodo = (index) => {
-    setTodos((prevTodos) => prevTodos.filter((_, i) => i !== index));
-  };
-
-  // Checks for interval for archiving the completed tasks
-  useEffect(() => {
-    const checkForArchivedTodos = () => {
-      const currentTime = new Date().getTime();
-      setTodos((prevTodos) => {
-        return prevTodos.map((todo) => {
-          if (
-            todo.status === "completed" &&
-            currentTime - todo.completedAt > 86400000
-          ) {
-            return { ...todo, status: "archived" };
-          }
-          return todo;
-        });
-      });
-    };
-
-    const interval = setInterval(checkForArchivedTodos, 60000);
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <>
       <div className="relative h-full w-full overflow-y-auto pb-9">
@@ -104,11 +48,7 @@ export default function TaskPanel() {
 
             {/* Task Input Field Absolute */}
             <div className="mt-3 w-full">
-              <TaskInputField
-                task={task}
-                onTaskChange={setTask}
-                onKeyPress={handleKeyPress}
-              />
+              <TaskInputField todos={todos} setTodos={setTodos} />
             </div>
             {/* - */}
 
@@ -140,12 +80,7 @@ export default function TaskPanel() {
                 </div>
               </div>
             ) : (
-              <Tasks
-                todos={todos}
-                onReorder={setTodos}
-                onComplete={handleCompleteTodo}
-                onRemove={handleRemoveTodo}
-              />
+              <Tasks todos={todos} setTodos={setTodos} />
             )}
           </div>
         </div>
