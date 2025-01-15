@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { TbSteam } from "react-icons/tb";
+import { v4 as uuidv4 } from "uuid";
 
 import "../i18n";
 import { useTranslation } from "react-i18next";
@@ -9,7 +10,7 @@ export default function TaskInputField({ todos, setTodos }) {
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && task.trim() !== "") {
-      const newTodo = { id: Date.now(), task, status: "active" };
+      const newTodo = { id: uuidv4(), task, status: "active" };
       setTodos([...todos, newTodo]);
       setTask("");
     }

@@ -23,28 +23,24 @@ export default function Tasks({ todos, setTodos }) {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  // Creates a task with the enter button
-
   // Marks task as completed
-  const handleCompleteTodo = (index) => {
+  const handleCompleteTodo = (id) => {
     const timestamp = new Date().getTime();
     setTodos((prevTodos) => {
-      const updatedTodos = [...prevTodos];
-      updatedTodos[index] = {
-        ...updatedTodos[index],
-        status: "completed",
-        completedAt: timestamp,
-      };
-      return updatedTodos;
+      return prevTodos.map((todo) =>
+        todo.id === id
+          ? { ...todo, status: "completed", completedAt: timestamp }
+          : todo,
+      );
     });
   };
 
   // Removes the task from the storage
-  const handleRemoveTodo = (index) => {
-    setTodos((prevTodos) => prevTodos.filter((_, i) => i !== index));
+  const handleRemoveTodo = (id) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id));
   };
 
-  // Checks for interval for archiving the completed tasks
+  // Interval for archiving the completed tasks
   useEffect(() => {
     const checkForArchivedTodos = () => {
       const currentTime = new Date().getTime();
@@ -92,7 +88,7 @@ export default function Tasks({ todos, setTodos }) {
                       {/* Completed button */}
                       <button
                         className="peer aspect-square rounded-full border border-emerald-600 border-secondary p-1 transition-all duration-300 ease-in-out hover:bg-emerald-600"
-                        onClick={() => handleCompleteTodo(index)}
+                        onClick={() => handleCompleteTodo(todo.id)}
                       >
                         <FaCheck className="size-3 fill-white opacity-0 transition-all duration-100 ease-in-out group-hover:opacity-100" />
                       </button>
@@ -106,7 +102,9 @@ export default function Tasks({ todos, setTodos }) {
                         {/* Edit button */}
                         <button
                           className="aspect-square rotate-90 rounded-full border-t border-secondary bg-white p-2 opacity-0 transition-all delay-0 duration-300 ease-in-out group-hover:-translate-y-6 group-hover:rotate-0 group-hover:opacity-100"
-                          onClick={() => console.log("Clicked")}
+                          onClick={() =>
+                            console.log("Current id is: ", todo.id)
+                          }
                         >
                           <FaPen className="size-4 fill-blue-300 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100" />
                         </button>
@@ -114,7 +112,7 @@ export default function Tasks({ todos, setTodos }) {
                         {/* Remove button */}
                         <button
                           className="aspect-square rotate-90 rounded-full border-t border-secondary bg-white p-2 opacity-0 transition-all delay-100 duration-300 ease-in-out group-hover:-translate-y-6 group-hover:rotate-0 group-hover:opacity-100"
-                          onClick={() => handleRemoveTodo(index)}
+                          onClick={() => handleRemoveTodo(todo.id)}
                         >
                           <FaTrash className="size-4 fill-red-400 opacity-0 transition-all duration-300 ease-in-out group-hover:opacity-100" />
                         </button>
