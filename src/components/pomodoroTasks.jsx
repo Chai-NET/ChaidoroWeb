@@ -4,6 +4,7 @@ import { TbSteam } from "react-icons/tb";
 import TaskInputField from "./taskInputField.jsx";
 import Tasks from "./tasks.jsx";
 import CompletedTasks from "./completedTasks.jsx";
+import emptyTaskDrawing from "../assets/drawings/emptyTaskDrawing.webp";
 
 import "../i18n";
 import { useTranslation } from "react-i18next";
@@ -74,22 +75,21 @@ export default function PomodoroTasks() {
           <div className="">
             {/* Empty List Message: */}
             {todos.length === 0 ? (
-              <div className="relative flex select-none flex-col items-center justify-center gap-3 py-12 text-center font-Outfit">
-                <h1 className="text-primary/45 text-xl font-light md:text-2xl">
-                  {t("emptyMsg")}
-                </h1>
-                <p className="tracking-tight text-secondary45">
-                  {t("emptyMsgDsc")}
-                  <br />
-                  {currentDate}.01 | © ChaiNET <br />
-                </p>
-                <div className="flex select-none items-center text-5xl font-black tracking-wide text-secondary45 md:text-7xl">
-                  <GiTeapot />
-                  <TbSteam size={35} className="text-primary/30" />
-                  <div className="scale-x-[-1]">
-                    <GiTeapot />
-                  </div>
+              <div className="relative flex select-none flex-col justify-center gap-3 p-3 px-12 text-center font-Outfit">
+                <div className="flex items-center justify-center gap-3">
+                  <div className="h-0.5 w-full bg-secondary45" />
+
+                  <h1 className="text-primary/45 text-nowrap text-sm font-light tracking-wider md:text-lg">
+                    {t("emptyMsg")}
+                  </h1>
+                  <div className="h-0.5 w-full bg-secondary45" />
                 </div>
+
+                <img
+                  src={emptyTaskDrawing}
+                  className="mx-auto w-80"
+                  alt="Drawing for empty task list"
+                />
               </div>
             ) : (
               <Tasks todos={todos} setTodos={setTodos} />
