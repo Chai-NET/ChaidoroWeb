@@ -74,7 +74,7 @@ export default function SearchableDropdown() {
             placeholder="Search..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full border-b border-dashed border-secondary border-opacity-45 bg-bgPrimary px-6 py-3 outline-none placeholder:text-secondary45 focus:ring-0"
+            className="w-full border-b border-dashed border-secondary border-opacity-45 bg-bgPrimary px-6 py-3 outline-none placeholder:text-text focus:ring-0"
           />
 
           {/* Language List */}

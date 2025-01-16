@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 3px;
 }
@@ -33,7 +41,7 @@
   @apply transition-colors duration-500 ease-in-out;
 }
 
-.theme-chai {
+/* .theme-chai {
   --color-darkest: #503a3a;
   --color-darker: #a98282;
   --color-dark: #bd9999;
@@ -41,6 +49,19 @@
   --color-clockText: #503a3a;
   --color-bg: #e5d4d4;
   --color-accentColor: #503a3a;
+} */
+
+.theme-chai {
+  --color-darkest: #252525;
+  --color-darker: #a1a5a5;
+  --color-dark: #e0e0e0;
+  --color-text: #252525;
+  --color-clockText: #252525;
+  --color-bg: #f5f5f5;
+  --color-accentColor: #685949;
+  /* edd627 - yellow */
+  /* 3654b8 - blue */
+  /* b83636 - red */
 }
 
 .theme-white {
@@ -57,11 +78,14 @@
 }
 
 .theme-black {
-  --color-darkest: #66558b;
-  --color-darker: #877f99;
-  --color-dark: #cfcfcf;
-  --color-text: #cfcfcf;
+  --color-darkest: #252525;
+  --color-darker: #a1a5a5;
+  --color-dark: #e0e0e0;
+  --color-text: #252525;
   --color-clockText: #252525;
-  --color-bg: #212121;
-  --color-accentColor: #66558b;
+  --color-bg: #f5f5f5;
+  --color-accentColor: #3654b8;
+  /* edd627 - yellow */
+  /* 3654b8 - blue */
+  /* b83636 - red */
 }
