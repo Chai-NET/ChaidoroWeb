@@ -19,16 +19,12 @@ function Clock() {
 
   // Random rotation for styling
   const getRandomNumber = () => Math.floor(Math.random() * 361);
-  console.log("Random number:", getRandomNumber());
+
   return (
     <>
       <div className={`theme-${theme} z-30 flex items-center justify-center`}>
         <AnimatePresence>
           <div className="relative w-full overflow-clip rounded-xl border border-b-2 border-secondary bg-secondary45 py-9 text-center font-AlbertSans text-clockText shadow shadow-secondary">
-            {/* <p className="font-RobotoCondensed text-xs font-light proportional-nums tracking-widest">
-            {t("clockMessage")}
-          </p> */}
-
             {/* Absolute styles */}
             <motion.div
               initial={{
@@ -55,24 +51,20 @@ function Clock() {
             </motion.div>
 
             {/* Clock types */}
-            <div className="z-20 flex items-center justify-center gap-9 font-Outfit text-lg font-light">
-              <button className="z-20 cursor-pointer rounded-xl p-2 px-5 transition-all duration-300 hover:bg-secondary">
+            <div className="z-20 flex items-center justify-center gap-3 font-Outfit text-lg font-light md:gap-9">
+              <button className="z-20 cursor-pointer rounded-xl p-2 px-5 text-center tracking-normal transition-all duration-300 hover:font-bold hover:tracking-widest hover:text-accent md:mx-3">
                 Focus
               </button>
-              <div className="z-20 h-3 w-0.5 rounded-full bg-clockText" />
-              <button className="z-20 cursor-pointer rounded-xl p-2 px-5 transition-all duration-300 hover:bg-secondary">
+              <div className="z-20 h-3 w-0.5 rounded-full bg-text opacity-75" />
+              <button className="z-20 cursor-pointer rounded-xl p-2 px-5 text-center tracking-normal transition-all duration-300 hover:font-bold hover:tracking-widest hover:text-accent md:mx-3">
                 Break
               </button>
             </div>
 
+            {/* Clock */}
             <div className="z-20 flex items-center justify-center gap-3">
-              <h1 className="z-20 text-7xl font-black shadow-text sm:text-8xl md:text-9xl">
-                25
-              </h1>
-              <div className="z-20 h-1 w-6 rounded-full bg-clockText" />
-
-              <h1 className="z-20 text-7xl font-black shadow-text sm:text-8xl md:text-9xl">
-                00
+              <h1 className="z-20 text-7xl font-black shadow-text text-shadow-sm sm:text-8xl md:text-9xl">
+                25:00
               </h1>
             </div>
 

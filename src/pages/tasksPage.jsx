@@ -48,7 +48,7 @@ export default function TasksPage() {
           <div className="flex items-center justify-center gap-3">
             <div className="h-0.5 w-full bg-secondary45" />
 
-            <h1 className="text-primary/45 text-nowrap text-sm font-light tracking-wider md:text-lg">
+            <h1 className="text-primary/45 text-nowrap text-sm font-light tracking-widest md:text-lg">
               {t("emptyMsg")}
             </h1>
             <div className="h-0.5 w-full bg-secondary45" />
