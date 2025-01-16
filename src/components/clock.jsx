@@ -108,12 +108,16 @@ function Clock() {
             >
               {isRunning ? t("Pause") : t("Start")}
             </button>
-            <button
-              className="z-20 mt-6 rounded-xl border border-b-4 border-clockText bg-clockText p-2 px-9 font-Outfit text-base font-semibold uppercase text-secondary45"
-              onClick={handleSkip}
-            >
-              {t("Skip")}
-            </button>
+            {isRunning ? (
+              <button
+                className="z-20 mt-6 rounded-xl border border-b-4 border-clockText bg-clockText p-2 px-9 font-Outfit text-base font-semibold uppercase text-secondary45"
+                onClick={handleSkip}
+              >
+                {t("Reset")}
+              </button>
+            ) : (
+              <div className="absolute"></div>
+            )}
           </div>
         </div>
       </AnimatePresence>
