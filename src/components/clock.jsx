@@ -63,6 +63,8 @@ function Clock() {
     return `${mins}:${secs < 10 ? "0" : ""}${secs}`;
   };
 
+  document.title = `${formatTime(time)} | Chaidoro`;
+
   return (
     <div className={`theme-${theme} z-30 flex items-center justify-center`}>
       <AnimatePresence>
