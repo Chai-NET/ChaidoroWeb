@@ -9,6 +9,7 @@ import { GiTeapot } from "react-icons/gi";
 import { BsGearWideConnected } from "react-icons/bs";
 import { FaRegClock, FaListOl } from "react-icons/fa6";
 import { FaCheckDouble } from "react-icons/fa";
+import flagEN from "./assets/flags/gb.svg";
 
 // Utilities
 import { ThemeProvider, useTheme } from "./utils/ThemeContext.jsx";
@@ -169,8 +170,9 @@ function App() {
     return (
       (savedLanguage && JSON.parse(savedLanguage)) || {
         name: "English",
+        originName: "English",
         code: "en",
-        flag: "🇬🇧",
+        flag: { flagEN },
       }
     );
   });
