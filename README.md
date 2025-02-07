@@ -11,7 +11,7 @@ Chaidoro is the web application that aims to provide the best pomodoro experienc
 
 We made of developers creating open source software to help other students / people improve their daily life habits. Our desire is to promote the use of open source! We have no desire to make money or collect data from the applications we produce.
 
-We also offer various private web services to companies.
+
 For more information please mail to [sales@chainet.dev](mailto:sales@chainet.dev)
 
 ![Chaidoro Web](readMeImages/MobileUI.png)
