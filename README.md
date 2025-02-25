@@ -1,7 +1,7 @@
 ![Chaidoro Web](readMeImages/Chaidoro.png)
 
 This is the web version of the Chaidoro developed by [Len Hera | ChaiNET](https://github.com/plwtx).
-Project is currently under development and is expected to be released as beta version on 15th of January 2025.
+Project is currently under development and is expected to be released as beta version on 15th of August 2025.
 
 ## What is Chaidoro ?
 
